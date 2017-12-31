@@ -11,6 +11,11 @@ import {
 
 import { connect } from 'react-redux';
 
+import {projectActions} from '../actions';
+
+import {setToken} from "../prefs";
+
+
 class MainScreen extends Component {
     static navigationOptions = {
         title: "Welcome"
@@ -21,10 +26,16 @@ class MainScreen extends Component {
         console.log("-- MainScreen render() :: username: " + this.props.username );
         console.log("-- MainScreen render() :: token: " + this.props.token );
 
+        setToken(this.props.token);
 
         return (
             <View>
-                <Text>Welcome to React Navigation</Text>
+                <Text>Team Manager Dashboard</Text>
+                <Button
+                    title="Projects"
+                    onPress={ () => this.props.getAllProjects(this.props.token) }
+                    
+                />
             </View>
         );
     }
@@ -39,7 +50,8 @@ const mapStateToProps = (state, ownProps) => {
  
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLogout: () => { dispatch(logout()); }
+        onLogout: () => { dispatch(logout()); },
+        getAllProjects: (token) => { dispatch(projectActions.getAll(token)); }
     }
 }
  
