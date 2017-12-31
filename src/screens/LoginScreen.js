@@ -48,14 +48,11 @@ export default class LoginScreen extends Component {
 
         console.log("-- _userLogin  --");
 
-        this.props.navigation.navigate("Main");
-
-        return;
 
         this.setState({isLoggingIn: true, message:''});
 
         var params = {
-            email: this.state.username,
+            username: this.state.username,
             password: this.state.password
         };
         
@@ -77,7 +74,7 @@ export default class LoginScreen extends Component {
         // sending login request to server]
         // ---------------------------------------
         var proceed = false;
-        fetch("https://w-pet.herokuapp.com/api/login", {
+        fetch("https://teammanager9.herokuapp.com/users/login", {
             method: "POST", 
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
@@ -86,12 +83,16 @@ export default class LoginScreen extends Component {
           })
           .then((response) => response.json())
           .then((response) => {
+
+            console.log("-- _userLogin :: server resp: " + JSON.stringify(response) );
+
+
             if (response.error) this.setState({message: response.message});
             else proceed = true;
           })
           .then(() => {
             this.setState({isLoggingIn: false})
-           // if (proceed) this.props.onLoginPress();
+            if (proceed) this.props.navigation.navigate("Main");
           })
           .done();
 
