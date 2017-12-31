@@ -9,8 +9,11 @@ import {
 
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
 
-export default class LoginScreen extends Component {
+import {login} from '../actions/user.actions';
+
+class LoginScreen extends Component {
 
 
     static navigationOptions = {
@@ -92,7 +95,10 @@ export default class LoginScreen extends Component {
           })
           .then(() => {
             this.setState({isLoggingIn: false})
-            if (proceed) this.props.navigation.navigate("Main");
+            if (proceed) {
+                this.props.onLogin(this.state.username, this.state.password);
+                this.props.navigation.navigate("Main");
+            }
           })
           .done();
 
@@ -162,3 +168,19 @@ export default class LoginScreen extends Component {
             )//return
     }//render
 }//LoginScreen
+
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+        isLoggedIn: state.auth.isLoggedIn
+    };
+}
+ 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onLogin: (username, password) => { dispatch(login(username, password)); }
+        //onSignUp: (username, password) => { dispatch(signup(username, password)); }
+    }
+}
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);

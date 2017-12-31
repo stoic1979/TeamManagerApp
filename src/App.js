@@ -28,9 +28,9 @@ const navReducer = (state, action) => {
     return newState || state;
 };
 
-connect(state => ({
-    nav: state.nav
-}))
+//connect(state => ({
+  //  nav: state.nav
+//}))
 class AppWithNavigationState extends Component {
     render() {
 
@@ -47,17 +47,23 @@ class AppWithNavigationState extends Component {
     }
 }
 
+const mapStateToProps = (state, ownProps) => {
+    return {
+        nav: state.nav
+    };
+}
+ 
+var Connected__AppWithNavigationState = connect(mapStateToProps)(AppWithNavigationState);
+
 const store = getStore(navReducer);
 
-//export default 
-function App1() {
-    return (
-        <Provider store={store}>
-            <AppWithNavigationState />
-        </Provider>
-    );
-}
+export default class App extends Component  {
 
-
-var App = AppNavigator;
-export default App;
+	render() {
+    	return (
+        	<Provider store={store}>
+            	<Connected__AppWithNavigationState />
+        	</Provider>
+    	);
+	}
+}//App
