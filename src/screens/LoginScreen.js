@@ -77,6 +77,7 @@ class LoginScreen extends Component {
         // sending login request to server]
         // ---------------------------------------
         var proceed = false;
+        var token = '';
         fetch("https://teammanager9.herokuapp.com/users/login", {
             method: "POST", 
             headers: {
@@ -91,12 +92,15 @@ class LoginScreen extends Component {
 
 
             if (response.error) this.setState({message: response.message});
-            else proceed = true;
+            else {
+             proceed = true;
+             token = response.token;
+            }
           })
           .then(() => {
             this.setState({isLoggingIn: false})
             if (proceed) {
-                this.props.onLogin(this.state.username, this.state.password);
+                this.props.onLogin(this.state.username, token);
                 this.props.navigation.navigate("Main");
             }
           })
@@ -178,7 +182,7 @@ const mapStateToProps = (state, ownProps) => {
  
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLogin: (username, password) => { dispatch(login(username, password)); }
+        onLogin: (username, token) => { dispatch(login(username, token)); }
         //onSignUp: (username, password) => { dispatch(signup(username, password)); }
     }
 }

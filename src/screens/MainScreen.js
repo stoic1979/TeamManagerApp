@@ -18,7 +18,8 @@ class MainScreen extends Component {
 
     render() {
 
-        console.log("-- MainScreen render() :: state: " + JSON.stringify(this.state) );
+        console.log("-- MainScreen render() :: username: " + this.props.username );
+        console.log("-- MainScreen render() :: token: " + this.props.token );
 
 
         return (
@@ -31,7 +32,8 @@ class MainScreen extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        username: state.auth.username
+        username: state.auth.username,
+        token: state.auth.token
     };
 }
  
