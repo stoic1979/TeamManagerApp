@@ -33,7 +33,12 @@ class MainScreen extends Component {
                 <Text>Team Manager Dashboard</Text>
                 <Button
                     title="Projects"
-                    onPress={ () => this.props.getAllProjects(this.props.token) }
+                    onPress={
+                         () => {
+                            this.props.getAllProjects(this.props.token);
+                            this.props.navigation.navigate("Projects");
+                        }
+                     }
                     
                 />
             </View>
