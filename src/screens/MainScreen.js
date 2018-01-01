@@ -18,7 +18,7 @@ import {setToken} from "../prefs";
 
 class MainScreen extends Component {
     static navigationOptions = {
-        title: "Welcome"
+        title: "Dashboard"
     };
 
     render() {

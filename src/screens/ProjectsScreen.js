@@ -9,26 +9,17 @@ import {
 } from 'react-native';
 
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
 
-import {login} from '../actions/user.actions';
-
-
-
 class ProjectsScreen extends Component {
-
 
     static navigationOptions = {
         title: "Projects"
     };
 
-
     //-------------------------
-    // states
+    // constructor
     //-------------------------
-
-
     constructor(props) {
         super(props);
 
@@ -38,26 +29,22 @@ class ProjectsScreen extends Component {
             isLoggingIn: false,
             message: ''
         }
-
-        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      dataSource: ds.cloneWithRows(['row 1', 'row 2']),
-    };
-
     }
 
-
+    //-------------------------
+    // render
+    //-------------------------
     render() {
-        console.log("------------------------------------------------------------------------------------");
-        console.log("---------------------- ProjectsScreenRR render(), projects: " + this.props.projects);
-
-        return (
-             <ListView
-        dataSource={this.state.dataSource}
-        renderRow={(rowData) => <Text>{rowData}</Text>}
-      />
-            )//return
+      const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+      var dataSource = ds.cloneWithRows(this.props.projects);
+      return (
+          <ListView
+            dataSource={dataSource}
+            renderRow={(rowData) => <Text>{rowData.title}</Text>}
+          />
+      )//return
     }//render
+    
 }//ProjectsScreen
 
 
@@ -70,8 +57,7 @@ const mapStateToProps = (state, ownProps) => {
  
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLogin: (username, token) => { dispatch(login(username, token)); }
-        //onSignUp: (username, password) => { dispatch(signup(username, password)); }
+      //FiXME
     }
 }
  

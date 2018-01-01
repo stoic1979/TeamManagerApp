@@ -15,7 +15,7 @@ function getAll(token) {
 
     
 
-    console.log("====== project-service getAll: token = " + token);
+   // console.log("====== project-service getAll: token = " + token);
 
     const requestOptions = {
         method: 'GET',
@@ -25,7 +25,7 @@ function getAll(token) {
     return fetch(url, requestOptions)
     .then((response) => {
 
-          console.log("+++++++ projectService resp: " + JSON.stringify(response) );
+          //console.log("+++++++ projectService resp: " + JSON.stringify(response) );
 
           if (!response.ok) {
             return Promise.reject(response.statusText);
@@ -34,7 +34,7 @@ function getAll(token) {
           return response.json();
         })
     .then((projects) => {
-      console.log(`++++++++ project-service getAll project_resp: ${  JSON.stringify(projects)}` );
+      //console.log(`++++++++ project-service getAll project_resp: ${  JSON.stringify(projects)}` );
 
       return projects;
     });

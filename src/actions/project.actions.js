@@ -53,14 +53,18 @@ function create(project_data) {
 
 function getAll(token) {
 
-  console.log("====== getAll ======");
+  console.log("====== [Projects-Action] getAll ======");
 
   return (dispatch) => {
     dispatch(request());
 
     projectService.getAll(token)
             .then(
-                (projects) => dispatch(success(projects)),
+                (projects) => { 
+                      console.log("====== [Projects-Action] got projects: " + projects);
+
+                    dispatch(success(projects))
+                 },
                 (error) => dispatch(failure(error))
             );
   };
@@ -71,7 +75,7 @@ function getAll(token) {
     return {type: projectConstants.GETALL_REQUEST};
   }
   function success(projects) {
-    console.log("********* action got projects: " + JSON.stringify(projects) );
+    console.log("********* [Projects-Action] got projects: " + JSON.stringify(projects) );
     return {type: projectConstants.GETALL_SUCCESS, projects};
   }
   function failure(error) {
