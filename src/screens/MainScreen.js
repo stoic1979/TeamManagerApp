@@ -48,6 +48,15 @@ class MainScreen extends Component {
                         }
                      }
                 />
+                <View style={{ height: 10 }} />
+                <Button
+                    title="Reports"
+                    onPress={
+                        () => {
+                            this.props.navigation.navigate("Reports");
+                        }
+                     }
+                />
 
             </View>
         );
