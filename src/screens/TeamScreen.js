@@ -6,7 +6,8 @@ import {
     TextInput,
     View,
     Button,
-    ActivityIndicator
+    ActivityIndicator,
+    ListView
 } from 'react-native';
 
 import { connect } from 'react-redux';
@@ -28,6 +29,9 @@ class TeamScreen extends Component {
 
         setToken(this.props.token);
 
+        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        var dataSource = ds.cloneWithRows(['Tom', 'Jerry']);
+
         return (
             <View style={{padding: 20}}>
                 <Text 
@@ -45,6 +49,15 @@ class TeamScreen extends Component {
                             this.props.navigation.navigate("Team");
                         }
                      }
+                />
+
+                <Text 
+                    style={{fontSize: 27}}>
+                    Team Members
+                </Text>
+                <ListView
+                    dataSource={dataSource}
+                    renderRow={(rowData) => <Text>{rowData}</Text>}
                 />
 
             </View>
