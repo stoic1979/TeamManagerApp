@@ -29,8 +29,7 @@ class MainScreen extends Component {
         setToken(this.props.token);
 
         return (
-            <View>
-                <Text>Team Manager Dashboard</Text>
+            <View style={{padding: 20}}>
                 <Button
                     title="Projects"
                     onPress={
@@ -39,8 +38,17 @@ class MainScreen extends Component {
                             this.props.navigation.navigate("Projects");
                         }
                      }
-                    
                 />
+                <View style={{ height: 10 }} />
+                <Button
+                    title="My Team"
+                    onPress={
+                        () => {
+                            this.props.navigation.navigate("Team");
+                        }
+                     }
+                />
+
             </View>
         );
     }
