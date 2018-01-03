@@ -4,6 +4,8 @@ import {
     TextInput,
     View,
     Button,
+    Image,
+    StyleSheet,
     ActivityIndicator,
     ListView
 } from 'react-native';
@@ -40,7 +42,13 @@ class ProjectsScreen extends Component {
       return (
           <ListView
             dataSource={dataSource}
-            renderRow={(rowData) => <Text>{rowData.title}</Text>}
+            renderRow={
+              (rowData) => 
+                <View style = {{ flex: 1, flexDirection: 'row', margin: 5}}>
+                  <Image source={require('../images/project.png')} style={{width: 40, height: 40}}/>
+                  <Text style={styles.textViewContainer}>{rowData.title}</Text>
+                </View>   
+            }
           />
       )//return
     }//render
@@ -60,5 +68,16 @@ const mapDispatchToProps = (dispatch) => {
       //FiXME
     }
 }
+
+const styles = StyleSheet.create({
+    textViewContainer: {
+    textAlignVertical: 'center',
+    width: '70%',
+    padding: 20,
+    fontSize: 15,
+    color: '#146C80'
+  }
+
+});
  
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectsScreen);

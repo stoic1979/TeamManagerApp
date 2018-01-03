@@ -6,6 +6,7 @@ import {
     TextInput,
     View,
     Button,
+    Image,
     ActivityIndicator
 } from 'react-native';
 
@@ -38,7 +39,9 @@ class MainScreen extends Component {
                             this.props.navigation.navigate("Projects");
                         }
                      }
-                />
+                    >
+                    <Image source={require('../images/project.png')} style={{width: 40, height: 40}} />
+                </Button>
                 <View style={{ height: 10 }} />
                 <Button
                     title="My Team"
