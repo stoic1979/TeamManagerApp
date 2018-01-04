@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, Image, View } from 'react-native';
 
 class ImageButton extends Component {
   render() {
@@ -9,16 +9,21 @@ class ImageButton extends Component {
       <TouchableOpacity style={styles.buttonStyle}
       onPress={() => onPress()}
       >
-       <Text style={styles.textStyle}>{title}</Text>
+      <View style={{ flexDirection: 'row', margin: 10}}>
+        <Image source={require('../images/project.png')} style={{width: 20, height: 20}} />
+        <Text style={styles.textStyle}>{title}</Text>
+      </View>
       </TouchableOpacity>
     );
   }
 }
 
+
 ImageButton.propTypes = {
   title: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired
 };
+
 
 const styles = StyleSheet.create({
   textStyle: {
@@ -28,8 +33,8 @@ const styles = StyleSheet.create({
   },
   
   buttonStyle: {
-    padding: 8,
-    backgroundColor: '#146C80',
+    padding: 4,
+    backgroundColor: '#cccccc',
     borderRadius: 10
   }
 });

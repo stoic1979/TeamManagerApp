@@ -12,17 +12,11 @@ import {
 } from 'react-native';
 
 import { connect } from 'react-redux';
-
 import {projectActions} from '../actions';
-
 import {setToken} from "../prefs";
-
 import GlobalStyle from '../config/style';
-
-import {ButtonStyle} from '../styles/button'
-
 import CustomButton from '../components/CustomButton'
-
+import ImageButton from '../components/ImageButton'
 
 
 class MainScreen extends Component {
@@ -71,6 +65,15 @@ class MainScreen extends Component {
                 <View style={{ height: 10 }} />    
 
                 <CustomButton 
+                    title="Click Me"
+                    onPress={
+                        () => {
+                            this.props.navigation.navigate("Reports");
+                        }
+                     }
+                />
+                <View style={{ height: 10 }} />    
+                <ImageButton 
                     title="Click Me"
                     onPress={
                         () => {
