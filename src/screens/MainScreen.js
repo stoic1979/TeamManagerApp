@@ -7,7 +7,8 @@ import {
     View,
     Button,
     Image,
-    ActivityIndicator
+    ActivityIndicator,
+    StyleSheet
 } from 'react-native';
 
 import { connect } from 'react-redux';
@@ -15,6 +16,13 @@ import { connect } from 'react-redux';
 import {projectActions} from '../actions';
 
 import {setToken} from "../prefs";
+
+import GlobalStyle from '../config/style';
+
+import {ButtonStyle} from '../styles/button'
+
+import CustomButton from '../components/CustomButton'
+
 
 
 class MainScreen extends Component {
@@ -30,20 +38,19 @@ class MainScreen extends Component {
         setToken(this.props.token);
 
         return (
-            <View style={{padding: 20}}>
-                <Button
+            <View style={GlobalStyle.container}>
+                <CustomButton
                     title="Projects"
                     onPress={
                          () => {
                             this.props.getAllProjects(this.props.token);
-                            this.props.navigation.navigate("Projects");
+                            this.props.navigation.navigate("ProjectList");
                         }
                      }
-                    >
-                    <Image source={require('../images/project.png')} style={{width: 40, height: 40}} />
-                </Button>
+                    />
+                
                 <View style={{ height: 10 }} />
-                <Button
+                <CustomButton
                     title="My Team"
                     onPress={
                         () => {
@@ -52,8 +59,19 @@ class MainScreen extends Component {
                      }
                 />
                 <View style={{ height: 10 }} />
-                <Button
+                <CustomButton
                     title="Reports"
+                    onPress={
+                        () => {
+                            this.props.navigation.navigate("Reports");
+                        }
+                     }
+                />
+
+                <View style={{ height: 10 }} />    
+
+                <CustomButton 
+                    title="Click Me"
                     onPress={
                         () => {
                             this.props.navigation.navigate("Reports");
@@ -79,5 +97,10 @@ const mapDispatchToProps = (dispatch) => {
         getAllProjects: (token) => { dispatch(projectActions.getAll(token)); }
     }
 }
+
+const styles = {
+  btnColor: '#146C80'
+
+};
  
 export default connect(mapStateToProps, mapDispatchToProps)(MainScreen);

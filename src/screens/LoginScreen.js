@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 
 import {login} from '../actions/user.actions';
 
+import CustomButton from '../components/CustomButton'
 
 
 class LoginScreen extends Component {

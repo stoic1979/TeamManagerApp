@@ -15,6 +15,7 @@ import { connect } from 'react-redux';
 import {projectActions} from '../actions';
 
 import {setToken} from "../prefs";
+import CustomButton from '../components/CustomButton'
 
 
 class TeamScreen extends Component {
@@ -42,7 +43,7 @@ class TeamScreen extends Component {
                     placeholder='Email' 
                 />
                 <View style={{ height: 10 }} />
-                <Button
+                <CustomButton
                     title="Invite"
                     onPress={
                         () => {

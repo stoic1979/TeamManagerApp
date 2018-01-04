@@ -13,7 +13,7 @@ import {
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class ProjectsScreen extends Component {
+class ProjectListScreen extends Component {
 
     static navigationOptions = {
         title: "Projects"
@@ -42,18 +42,22 @@ class ProjectsScreen extends Component {
       return (
           <ListView
             dataSource={dataSource}
+            renderSeparator = {this.ListViewItemSeparator}
             renderRow={
               (rowData) => 
-                <View style = {{ flex: 1, flexDirection: 'row', margin: 5}}>
+                <View style={{ flex: 1, flexDirection: 'row', margin: 10}}>
                   <Image source={require('../images/project.png')} style={{width: 40, height: 40}}/>
-                  <Text style={styles.textViewContainer}>{rowData.title}</Text>
+                  <Text 
+                  style={styles.textViewContainer}
+                  onPress = { () => this.props.navigation.navigate("Project")} 
+                  >{rowData.title}</Text>
                 </View>   
             }
           />
       )//return
     }//render
     
-}//ProjectsScreen
+}//ProjectListScreen
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -70,14 +74,15 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const styles = StyleSheet.create({
-    textViewContainer: {
+  textViewContainer: {
     textAlignVertical: 'center',
     width: '70%',
-    padding: 20,
     fontSize: 15,
-    color: '#146C80'
+    color: '#146C80',
+    justifyContent: 'center',
+    marginLeft: 10,
   }
 
 });
  
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectsScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectListScreen);
