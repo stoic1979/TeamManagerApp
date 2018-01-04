@@ -10,7 +10,7 @@ class ImageButton extends Component {
       onPress={() => onPress()}
       >
       <View style={{ flexDirection: 'row', margin: 10}}>
-        <Image source={require('../images/project.png')} style={{width: 20, height: 20}} />
+        <Image source={require('../images/icon.png')} style={{width: 20, height: 20}} />
         <Text style={styles.textStyle}>{title}</Text>
       </View>
       </TouchableOpacity>
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   
   buttonStyle: {
     padding: 4,
-    backgroundColor: '#cccccc',
+    backgroundColor: '#146C80',
     borderRadius: 10
   }
 });
