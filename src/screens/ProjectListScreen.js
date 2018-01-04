@@ -31,6 +31,15 @@ class ProjectListScreen extends Component {
             isLoggingIn: false,
             message: ''
         }
+
+        this.showProjectScreen = this.showProjectScreen.bind(this);
+    }
+
+    showProjectScreen(projectId) {
+
+      console.log("+++++++++++++++++++++>>> projectId: " + projectId);
+
+      this.props.navigation.navigate("Project", {projectId: projectId})
     }
 
     //-------------------------
@@ -49,7 +58,7 @@ class ProjectListScreen extends Component {
                   <Image source={require('../images/project.png')} style={{width: 40, height: 40}}/>
                   <Text 
                   style={styles.textViewContainer}
-                  onPress = { () => this.props.navigation.navigate("Project")} 
+                  onPress = { () => this.showProjectScreen(rowData._id) } 
                   >{rowData.title}</Text>
                 </View>   
             }

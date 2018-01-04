@@ -29,6 +29,8 @@ class ProjectScreen extends Component {
 
         setToken(this.props.token);
 
+        console.log("++++++++++ ProjectScreen +++++++++++>>> projectId: " + this.props.navigation.state.params.projectId );
+
         return (
             <View style={{padding: 20}}>
                 <Button
