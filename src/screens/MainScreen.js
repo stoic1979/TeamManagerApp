@@ -33,8 +33,9 @@ class MainScreen extends Component {
 
         return (
             <View style={GlobalStyle.container}>
-                <CustomButton
+                <ImageButton
                     title="Projects"
+                    img={require('../images/icon.png')}
                     onPress={
                          () => {
                             this.props.getAllProjects(this.props.token);
@@ -44,8 +45,9 @@ class MainScreen extends Component {
                     />
                 
                 <View style={{ height: 10 }} />
-                <CustomButton
+                <ImageButton
                     title="My Team"
+                    img={require('../images/icon.png')}
                     onPress={
                         () => {
                             this.props.navigation.navigate("Team");
@@ -53,8 +55,9 @@ class MainScreen extends Component {
                      }
                 />
                 <View style={{ height: 10 }} />
-                <CustomButton
+                <ImageButton
                     title="Reports"
+                    img={require('../images/icon.png')}
                     onPress={
                         () => {
                             this.props.navigation.navigate("Reports");
@@ -64,8 +67,9 @@ class MainScreen extends Component {
 
                 <View style={{ height: 10 }} />    
 
-                <CustomButton 
+                <ImageButton 
                     title="Click Me"
+                    img={require('../images/icon.png')}
                     onPress={
                         () => {
                             this.props.navigation.navigate("Reports");
@@ -75,6 +79,7 @@ class MainScreen extends Component {
                 <View style={{ height: 10 }} />    
                 <ImageButton 
                     title="Click Me"
+                    img={require('../images/icon.png')}
                     onPress={
                         () => {
                             this.props.navigation.navigate("Reports");
