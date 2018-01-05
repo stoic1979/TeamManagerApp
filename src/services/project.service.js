@@ -1,21 +1,8 @@
 export const projectService = { getAll };
 
-/*
-function _getToken() {
-  var user = JSON.parse(localStorage.getItem('user'));
-  return user.token;
-}
-*/
-
 import getToken from "../prefs";
 
 function getAll(token) {
-
-    //var token = getToken()
-
-    
-
-   // console.log("====== project-service getAll: token = " + token);
 
     const requestOptions = {
         method: 'GET',
@@ -39,7 +26,5 @@ function getAll(token) {
       return projects;
     });
 }// getAll
-
-
 
 

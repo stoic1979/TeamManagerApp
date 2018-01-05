@@ -1,19 +1,10 @@
-import {settings} from "../config"
-
-
 export const issueService = { getAll,create };
-
-
-function _getToken() {
-  var user = JSON.parse(localStorage.getItem('user'));
-  return user.token;
-}
 
 
 // -----------------------------------------------------------------------------
 //     CREATE ISSUE
 // -----------------------------------------------------------------------------
-function create(issue_data) {
+function create(token, issue_data) {
   var user = JSON.parse(localStorage.getItem('user'));
   console.log(`[issue-service] got user: ${  JSON.stringify(user)}`);
   console.log(`[issue-service] got token: ${  user.token}`);
@@ -40,10 +31,10 @@ function create(issue_data) {
 
   const requestOptions = {
     method: 'POST',
-    headers: {'x-access-token': _getToken(),'Content-Type': 'application/x-www-form-urlencoded'},
+    headers: {'x-access-token': token,'Content-Type': 'application/x-www-form-urlencoded'},
     body: body,
   };
-  const url = `${settings.API_ROOT}/issues/add`
+  const url = "https://teammanager9.herokuapp.com/issues/add";
   return fetch(url, requestOptions)
         .then((response) => {
           if (!response.ok) {
@@ -63,16 +54,16 @@ function create(issue_data) {
     });
 }// create
 
-function getAll(selectedProject) {
+function getAll(token, project_id) {
 
     console.log("====== issue-service getAll ======");
-   console.log("selectedProject in issue service " +selectedProject);
+   console.log("project_id in issue service " + project_id);
 
     const requestOptions = {
         method: 'GET',
-        headers: {'x-access-token': _getToken()},
+        headers: {'x-access-token': token},
     };
-    const url = `${settings.API_ROOT}/issues/all_by_project/${selectedProject}`
+    const url = `https://teammanager9.herokuapp.com/issues/all_by_project/${project_id}`
     return fetch(url, requestOptions)
     .then((response) => {
 

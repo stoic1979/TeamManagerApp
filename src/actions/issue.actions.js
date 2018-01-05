@@ -1,6 +1,6 @@
 import {issueConstants} from '../constants';
 import {issueService} from '../services';
-import {alertActions} from './';
+//import {alertActions} from './';
 
 
 export const issueActions = {
@@ -12,7 +12,7 @@ export const issueActions = {
 };
 
 // -----------------------------------------------------------------------------
-//     CREATE FAMILY
+//     CREATE ISSUE
 // -----------------------------------------------------------------------------
 function create(issue_data) {
   console.log('[issue-action] create()');
@@ -29,7 +29,7 @@ function create(issue_data) {
                 },
                 (error) => {
                   dispatch(failure(error));
-                  dispatch(alertActions.error(error));
+                  //dispatch(alertActions.error(error));
                 }
             );
   };
@@ -51,14 +51,14 @@ function create(issue_data) {
 //
 
 
-function getAll(selectedProject) {
+function getAll(token, selectedProject) {
 
   console.log("====== getAll ======");
-  console.log("selectedProject in issue action "+selectedProject);
+  console.log("selectedProject in issue action " + selectedProject);
   return (dispatch) => {
     dispatch(request());
 
-    issueService.getAll(selectedProject)
+    issueService.getAll(token, selectedProject)
             .then(
                 (issues) => dispatch(success(issues)),
                 (error) => dispatch(failure(error))

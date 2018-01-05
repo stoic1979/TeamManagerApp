@@ -10,6 +10,9 @@ import {
     ListView
 } from 'react-native';
 
+
+import {issueActions} from '../actions';
+
 import CustomButton from '../components/CustomButton';
 
 import React, { Component } from 'react';
@@ -44,8 +47,9 @@ class ProjectListScreen extends Component {
 
     showProjectScreen(project) {
 
-      console.log("+++++++++++++++++++++>>> project: " + JSON.stringify(project));
+      console.log("[ProjectListScreen] showProjectScreen () - project: " + JSON.stringify(project));
 
+      this.props.getAllIssues(this.props.token, project._id);
       this.props.navigation.navigate("Project", {project: project})
     }
 
@@ -53,6 +57,8 @@ class ProjectListScreen extends Component {
     // render
     //-------------------------
     render() {
+      console.log("[ProjectListScreen] token: " + JSON.stringify(this.props.token));
+
       const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
       var dataSource = ds.cloneWithRows(this.props.projects);
       return (
@@ -80,15 +86,21 @@ class ProjectListScreen extends Component {
 
 
 const mapStateToProps = (state, ownProps) => {
+
+
+    console.log("SSSSSSSSSSSSSS state: " + JSON.stringify(state));
+
+
     return {
         isLoggedIn: state.auth.isLoggedIn,
-        projects: state.projects
+        projects: state.projects,
+        token: state.auth.token
     };
 }
  
 const mapDispatchToProps = (dispatch) => {
     return {
-      //FiXME
+      getAllIssues: (token, project_id) => { dispatch(issueActions.getAll(token, project_id)); }
     }
 }
 
