@@ -81,7 +81,7 @@ export default class RegisterScreen extends Component {
         // sending register request to server
         //---------------------------------------
         var proceed=false;
-        fetch('https://w-pet.herokuapp.com/api/register', {
+        fetch('https://teammanager9.herokuapp.com/users/register', {
         	method: "POST",
         	headers: {
         		'Content-Type': 'application/x-www-form-urlencoded'

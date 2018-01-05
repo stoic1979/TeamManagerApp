@@ -22,12 +22,12 @@ DerivedData
 project.xcworkspace
 
 # Gradle
-/build/
-android/app/build/*
+android/build/
+android/app/build/
+android/app/build/intermediates/
 android/app/gradle/
 android/app/gradlew
 android/app/gradlew.bat
-build/
 
 # Buck
 .buckd
