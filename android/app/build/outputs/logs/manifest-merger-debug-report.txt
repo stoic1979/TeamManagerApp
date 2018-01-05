@@ -2,7 +2,7 @@
 manifest
 ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:1:1-32:12
 	package
-		ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:2:5-33
+		ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:2:5-36
 		INJECTED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml
 		INJECTED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml
 	android:versionName
@@ -26,7 +26,7 @@ MERGED from [com.facebook.react:react-native:0.51.0] /home/web/work/TeamManagerA
 		ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:7:22-75
 uses-sdk
 ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:9:5-11:41
-MERGED from [TeamManagerApp:react-native-splash-screen:unspecified] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/TeamManagerApp/react-native-splash-screen/unspecified/AndroidManifest.xml:7:5-9:41
+MERGED from [TeamManagerPro:react-native-splash-screen:unspecified] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/TeamManagerPro/react-native-splash-screen/unspecified/AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.51.0] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:23.4.0] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/AndroidManifest.xml:5:5-44
@@ -52,7 +52,7 @@ MERGED from [com.facebook.soloader:soloader:0.1.0] /home/web/work/TeamManagerApp
 		INJECTED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml
 application
 ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:13:5-30:19
-MERGED from [TeamManagerApp:react-native-splash-screen:unspecified] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/TeamManagerApp/react-native-splash-screen/unspecified/AndroidManifest.xml:11:5-15:19
+MERGED from [TeamManagerPro:react-native-splash-screen:unspecified] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/TeamManagerPro/react-native-splash-screen/unspecified/AndroidManifest.xml:11:5-15:19
 MERGED from [com.facebook.react:react-native:0.51.0] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/AndroidManifest.xml:13:5-20
 MERGED from [com.android.support:appcompat-v7:23.4.0] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/AndroidManifest.xml:7:5-20
@@ -63,7 +63,7 @@ MERGED from [org.webkit:android-jsc:r174650] /home/web/work/TeamManagerApp/andro
 	android:label
 		ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:16:7-39
 	android:supportsRtl
-		ADDED from [TeamManagerApp:react-native-splash-screen:unspecified] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/TeamManagerApp/react-native-splash-screen/unspecified/AndroidManifest.xml:14:9-35
+		ADDED from [TeamManagerPro:react-native-splash-screen:unspecified] /home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/TeamManagerPro/react-native-splash-screen/unspecified/AndroidManifest.xml:14:9-35
 	android:allowBackup
 		ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:15:7-33
 	android:icon
@@ -72,7 +72,7 @@ MERGED from [org.webkit:android-jsc:r174650] /home/web/work/TeamManagerApp/andro
 		ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:18:7-38
 	android:name
 		ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:14:7-38
-activity#com.teammanagerapp.MainActivity
+activity#com.wb.teammanagerapp.MainActivity
 ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:19:7-28:18
 	android:label
 		ADDED from /home/web/work/TeamManagerApp/android/app/src/main/AndroidManifest.xml:21:9-41

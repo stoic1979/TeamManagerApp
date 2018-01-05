@@ -1,4 +1,4 @@
-package com.teammanagerapp;
+package com.wb.teammanagerapp;
 
 import android.app.Application;
 

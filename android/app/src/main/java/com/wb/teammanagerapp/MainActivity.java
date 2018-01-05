@@ -1,4 +1,4 @@
-package com.teammanagerapp;
+package com.wb.teammanagerapp;
 
 import android.os.Bundle;
 import org.devio.rn.splashscreen.SplashScreen;
@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "TeamManagerApp";
+        return "TeamManagerPro";
     }
 	 @Override
     protected void onCreate(Bundle savedInstanceState) {
