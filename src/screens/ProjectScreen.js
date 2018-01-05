@@ -31,10 +31,12 @@ class ProjectScreen extends Component {
 
         setToken(this.props.token);
 
-        console.log("++++++++++ ProjectScreen +++++++++++>>> projectId: " + this.props.navigation.state.params.projectId );
+        console.log("++++++++++ ProjectScreen +++++++++++>>> projectId: " + JSON.stringify(this.props.navigation.state.params.project) );
 
         return (
             <View style={{padding: 20}}>
+                <Text>{this.props.navigation.state.params.project.title}</Text>
+                <View style={{ height: 10 }} />
                 <CustomButton
                     title="Add Issue"
                     onPress={
