@@ -127,6 +127,8 @@ class LoginScreen extends Component {
 
         return (
             <ScrollView style={{padding: 20}}>
+                <View style={{height:100}} />
+
                 <Text 
                     style={{fontSize: 27}}>
                     Login
@@ -161,12 +163,14 @@ class LoginScreen extends Component {
 
                 <View style={{flex: 1, flexDirection: 'row', margin: 10}}>
                 <Button 
+                    color='#1a9187'
                     disabled={this.state.isLoggingIn||!this.state.username||!this.state.password}
                     onPress={this._userLogin}
                     title="Login"
                 />
                 <Button
                     title="Register"
+                    color='#1a9187'
                     onPress={ () => this.props.navigation.navigate("Register")}
                     
                 />

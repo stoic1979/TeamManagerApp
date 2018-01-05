@@ -3,6 +3,7 @@ import { Text } from "react-native";
 import { Provider, connect } from "react-redux";
 import { StackNavigator, addNavigationHelpers } from "react-navigation";
 
+import SplashScreen from 'react-native-splash-screen'
 
 import Routes from "./config/routes"
 
@@ -32,6 +33,17 @@ const navReducer = (state, action) => {
   //  nav: state.nav
 //}))
 class AppWithNavigationState extends Component {
+
+    //------------------------------------------
+    //    ComponentDidMount Function
+    //------------------------------------------
+    componentDidMount() {
+      // do stuff while splash screen is shown
+        // After having done stuff (such as async tasks) hide the splash screen
+        SplashScreen.hide();
+    }//ComponentDidMount
+
+
     render() {
 
     	console.log("-- AppWithNavigationState render() --");
