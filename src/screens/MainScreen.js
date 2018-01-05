@@ -67,26 +67,6 @@ class MainScreen extends Component {
 
                 <View style={{ height: 10 }} />    
 
-                <ImageButton 
-                    title="Click Me"
-                    img={require('../images/icon.png')}
-                    onPress={
-                        () => {
-                            this.props.navigation.navigate("Reports");
-                        }
-                     }
-                />
-                <View style={{ height: 10 }} />    
-                <ImageButton 
-                    title="Click Me"
-                    img={require('../images/icon.png')}
-                    onPress={
-                        () => {
-                            this.props.navigation.navigate("Reports");
-                        }
-                     }
-                />
-
             </View>
         );
     }
