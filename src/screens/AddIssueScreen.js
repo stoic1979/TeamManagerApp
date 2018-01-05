@@ -11,7 +11,7 @@ import CustomButton from '../components/CustomButton';
 
 class AddIssueScreen extends React.Component{
 	 static navigationOptions = {
-        title: "Add new Project"
+        title: "Add new Issue"
     };
     //---------------------
     // constructor
@@ -35,6 +35,48 @@ class AddIssueScreen extends React.Component{
 
 		_AddIssue(){
 			console.log(this.state);
+      console.log(this.props.token);
+      var params={
+        summary: this.state.summary,
+        description: this.state.description,
+        assignee: this.state.assignee,
+        priority: this.state.priority,
+        type: this.state.type,
+        status: this.state.status,
+        start_date: this.state.start_date,
+        end_date: this.state.end_date,
+        estimated_hours: this.state.estimated_hours,
+        token: this.props.token
+      }
+      //-----------------------------
+      // composing form body
+      //-----------------------------
+      var formBody = [];
+        for (var property in params) {
+          var encodedKey = encodeURIComponent(property);
+          var encodedValue = encodeURIComponent(params[property]);
+          formBody.push(encodedKey + "=" + encodedValue);
+        }
+        formBody = formBody.join("&");
+
+        console.log("-- formBody: " + formBody);
+
+        //------------------------
+        //  sending data to API
+        //------------------------
+        fetch("https://teammanager9.herokuapp.com/issues/add", {
+            method: "POST", 
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formBody
+          })
+          .then((response) => response.json())
+          .then((response) => {
+            console.log('-----',response);
+            }
+            )
+
 			}
 
 	render(){
