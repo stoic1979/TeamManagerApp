@@ -6,6 +6,7 @@ import ProjectListScreen from '../screens/ProjectListScreen';
 import ProjectScreen from '../screens/ProjectScreen';
 import TeamScreen from '../screens/TeamScreen';
 import ReportsScreen from '../screens/ReportsScreen';
+import AddProjectScreen from '../screens/AddProjectScreen';
 
 const Routes = {
     Login: { screen: LoginScreen },
@@ -14,7 +15,8 @@ const Routes = {
     ProjectList: { screen: ProjectListScreen },
     Project: { screen: ProjectScreen },
     Team: { screen: TeamScreen },
-    Reports: { screen: ReportsScreen }
+    Reports: { screen: ReportsScreen },
+    AddProject: { screen: AddProjectScreen}
 
 };
 

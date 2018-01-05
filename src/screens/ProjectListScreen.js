@@ -10,6 +10,8 @@ import {
     ListView
 } from 'react-native';
 
+import CustomButton from '../components/CustomButton';
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -33,6 +35,11 @@ class ProjectListScreen extends Component {
         }
 
         this.showProjectScreen = this.showProjectScreen.bind(this);
+        this.addproject = this.addproject.bind(this);
+    }
+
+    addproject(){
+      this.props.navigation.navigate("AddProject");
     }
 
     showProjectScreen(projectId) {
@@ -49,6 +56,8 @@ class ProjectListScreen extends Component {
       const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
       var dataSource = ds.cloneWithRows(this.props.projects);
       return (
+        <View>
+        <CustomButton title='add project' onPress={this.addproject}/>
           <ListView
             dataSource={dataSource}
             renderSeparator = {this.ListViewItemSeparator}
@@ -63,6 +72,7 @@ class ProjectListScreen extends Component {
                 </View>   
             }
           />
+        </View>  
       )//return
     }//render
     

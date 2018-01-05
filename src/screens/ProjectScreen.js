@@ -10,6 +10,8 @@ import {
     ActivityIndicator
 } from 'react-native';
 
+import CustomButton from '../components/CustomButton';
+
 import { connect } from 'react-redux';
 
 import {projectActions} from '../actions';
@@ -33,7 +35,7 @@ class ProjectScreen extends Component {
 
         return (
             <View style={{padding: 20}}>
-                <Button
+                <CustomButton
                     title="Add Issue"
                     onPress={
                          () => {
@@ -43,7 +45,7 @@ class ProjectScreen extends Component {
                      }
                     >
                     <Image source={require('../images/project.png')} style={{width: 40, height: 40}} />
-                </Button>
+                </CustomButton>
                 <View style={{ height: 10 }} />
 
             </View>
