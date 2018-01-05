@@ -1,6 +1,7 @@
 
 import MainScreen from '../screens/MainScreen';
 import LoginScreen from '../screens/LoginScreen';
+import AddIssueScreen from '../screens/AddIssueScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import ProjectListScreen from '../screens/ProjectListScreen';
 import ProjectScreen from '../screens/ProjectScreen';
@@ -16,7 +17,8 @@ const Routes = {
     Project: { screen: ProjectScreen },
     Team: { screen: TeamScreen },
     Reports: { screen: ReportsScreen },
-    AddProject: { screen: AddProjectScreen}
+    AddProject: { screen: AddProjectScreen},
+    AddIssue: {screen: AddIssueScreen}
 
 };
 

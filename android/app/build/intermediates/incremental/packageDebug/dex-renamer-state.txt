@@ -1,4 +1,4 @@
-#Fri Jan 05 15:12:48 IST 2018
-base.0=/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+#Fri Jan 05 16:19:20 IST 2018
+base.0=/home/web/work/TeamManagerApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
-file.0=/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+file.0=/home/web/work/TeamManagerApp/android/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

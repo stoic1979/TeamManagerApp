@@ -57,7 +57,7 @@ class ProjectScreen extends Component {
                     onPress={
                          () => {
                             this.props.getAllProjects(this.props.token);
-                            this.props.navigation.navigate("ProjectList");
+                            this.props.navigation.navigate("AddIssue");
                         }
                      }
                     >
