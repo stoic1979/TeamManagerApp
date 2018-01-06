@@ -13,9 +13,11 @@ class AddIssueScreen extends React.Component{
 	 static navigationOptions = {
         title: "Add new Issue"
     };
+
     //---------------------
     // constructor
-    //--------------------
+    //---------------------
+
 		constructor(props){
 			super(props);
 			this.state={
@@ -36,10 +38,12 @@ class AddIssueScreen extends React.Component{
 		_AddIssue(){
 			console.log(this.state);
       console.log(this.props.token);
+      console.log(this.props);
       var params={
+        project: '5a0a99ee5080650004f627a3',//hardcoded value
         summary: this.state.summary,
         description: this.state.description,
-        assignee: this.state.assignee,
+        assignee: '5a086f58bd0af70004bbae39',//hardcoded value
         priority: this.state.priority,
         type: this.state.type,
         status: this.state.status,
@@ -122,11 +126,6 @@ class AddIssueScreen extends React.Component{
               <Picker.Item label="Closed" value="CLOSED" />
               <Picker.Item label="Reopened" value="REOPENED" />
       </Picker>
-      <TextInput
-            ref={component => this._estimated_hours = component}
-            placeholder='Estimated Hours' 
-            onChangeText={(estimated_hours) => this.setState({estimated_hours})}
-      />
       <Text>Start Date</Text>
       <DatePicker 
               date={this.state.start_date}

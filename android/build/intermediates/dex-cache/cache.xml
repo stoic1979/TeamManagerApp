@@ -3,219 +3,219 @@
 
     <item
         is-multidex="false"
-        jar="/home/neo/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_49b1cad8acc8bfbf0c48f79e85cd15096b9573b1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_ac8aa311ae97dab3b92fd112d2cfc710280036a6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_c9feb279977459888f4c7263a4b4b6b887fdc108.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_57e3dbb98c4e068db2a37522eb2b4e753ce10ad1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_aed3669323044ed997e4016256926d9f9dcb1342.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jar="/home/web/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_5ea8a5d703f1bcab58095872dab194be5875a571.jar" />
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_6d695a2f5402633f39c22d40d72b9c14dec4a52e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/jars/libs/infer-annotations-4.0.jar"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_e8479a7b1879e290d751970932d24c5233a20b6b.jar" />
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.3.0_b15086e6bd505c4ae412bc6b45dec58cb882bfaa.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_612cc73214d2c33124feb92fa17d5739f5cee363.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_3b48d7a61fd74126951845d197eb537a38060e57.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_63c6a163f3be124c43f63f0dceb7f61340aaffc3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_7c11ec95346acf33a70cad36148459835315825f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_b8519db774d7a0fd4760cce205d531caa47a6253.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_8f86e5bb3af65476dcce5153409b1530854b55f7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_2c158eadd05cb07f95c4187b461c7b737dfaf738.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_e0027d0c165f9bb92cec6ddd894fd2e08c00447a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_b0bea30f1909bcd3b3eb16a23440da2d75eca090.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/TeamManagerPro/react-native-splash-screen/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="21e4c7a1bc98da390f543e4cca77a72d1e0eb76f">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/TeamManagerPro-react-native-splash-screen-unspecified_fce343e32737046225ff384153450068b626a4f3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.3.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_98d1d2e2980015b9d065b308d0a8d97d4c8c3b6b.jar" />
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.3.0_b4ceab3fb94ed7a1dc4bd69dd07ca415259b48ae.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_c5119b5775988feb6cdfb2c2438ce033417adda3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_3dfc7e240df7476d993d3b9515b0fe1e984c8b3c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_cbd9347497b71eb0ee8ebbce8856c0b0fead6e4a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_a76474a1b209667d4dc7ba2e6b41ee495e5bba68.jar" />
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_c3b47ea5457b4746f133b793aca0e9a08c2e721a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_c25809cf0fb6605cc236134dcacf7d2333a89353.jar" />
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_ce6ea5dd20117224263c06a8d4221f0c84eb705c.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/jars/classes.jar"
+        jar="/home/web/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_10dc9069180f879086d7c9b4e3c29765e4502030.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_30d5a6d0a29da295742aa93ff038410fe9f20917.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.3.0_44ce1d1ca6fc835b4270ae2076f06143651f04cf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_f16aef402ba45763d3c637b4c817bfe499884dc9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_e6c7d07bff915870528936feef058309551ec8b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_3977a8ded6d1ad5890452183d06d2825be894bd3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.3.0_dbdd6ef7d1df93857b55f878ea55a905144ff15b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_b06721d12eedc259b3799a838fa8bf52dea8a3f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="99941aaaf86dc5e525cd9208c2f7c9a624f4f004">
-        <dex dex="/home/neo/work/stoic/reactJs/native/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.51.0_360e8ba777f20641f234aa8b86f3cb9a0244b1e7.jar" />
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.51.0_0442bc43bfb93ad7b8c2f59b44cbc70fcf66bba9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_6a2428182ad14e5572a0d8b6118ced9f206bb27e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_8f2be75c4ee58a6f18910462e35ea8e40c1691f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_edfb63874db9319be636b562b7aaf020df491ac2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.51.0/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_8dc1ee7926004e1bab048ad3930662fcd86ea799.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.3.0_14e2299e0c02125a19707a6c76d44d84ad418a1b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_68b1ee6536bcec46b628f87e0a77258a1f3644fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.3.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.3.0_d31045ceb4fae0495f86dd2b6144450ef81c73c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_0dcf9eeb1ac2fb7f608733e83a82c71b560d2d51.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_b84e8ef5342b7bae541f7357bf2b5e5e5aba7b51.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/TeamManagerPro/react-native-splash-screen/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="7be9638ab45071735c127e5e7b671091843da259">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/TeamManagerPro-react-native-splash-screen-unspecified_602f24d540d9850f64f5e6a10123ca745d9857fa.jar" />
     </item>
 
 </items>

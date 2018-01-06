@@ -13,19 +13,70 @@ import {
 import { connect } from 'react-redux';
 
 import {projectActions} from '../actions';
+import {teamMemberActions} from '../actions';
 
 import {setToken} from "../prefs";
 import CustomButton from '../components/CustomButton'
 
 
 class TeamScreen extends Component {
+     constructor(props) {
+        super(props);
+
+        this.state = {
+            email: '',
+          
+        }
+        this._addmember=this._addmember.bind(this);
+    }
     static navigationOptions = {
         title: "My Team"
     };
 
+
+        _addmember(){
+            console.log(this.state);
+            var params={
+                email: this.state.email,
+              
+                token: this.props.token
+            }
+                console.log('---',this.props.token);
+            //-----------------------------
+            // composing form body
+            //-----------------------------
+            var formBody = [];
+        for (var property in params) {
+          var encodedKey = encodeURIComponent(property);
+          var encodedValue = encodeURIComponent(params[property]);
+          formBody.push(encodedKey + "=" + encodedValue);
+        }
+        formBody = formBody.join("&");
+
+        console.log("-- formBody: " + formBody);
+
+        //------------------------
+        //  sending data to API
+        //------------------------
+
+
+        fetch("https://teammanager9.herokuapp.com/members/invite_team_member", {
+            method: "POST", 
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formBody
+          })
+          .then((response) => response.json())
+          .then((response) => {
+            console.log('-----',response);
+            }
+            )
+      }
+
     render() {
 
-        console.log("-- TeamScreen render() :: username: " + this.props.username );
+      
         console.log("-- TeamScreen render() :: token: " + this.props.token );
 
         setToken(this.props.token);
@@ -40,16 +91,15 @@ class TeamScreen extends Component {
                     Invite Team Member
                 </Text>
                 <TextInput
-                    placeholder='Email' 
+                    ref={component => this._email = component}
+                    placeholder='Email'
+                    onChangeText={(email)=>this.setState({email})}
                 />
                 <View style={{ height: 10 }} />
                 <CustomButton
                     title="Invite"
-                    onPress={
-                        () => {
-                            this.props.navigation.navigate("Team");
-                        }
-                     }
+                   onPress={this._addmember}
+                     
                 />
 
                 <Text 
@@ -76,7 +126,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onLogout: () => { dispatch(logout()); },
-        getAllProjects: (token) => { dispatch(projectActions.getAll(token)); }
+        getAllProjects: (token) => { dispatch(projectActions.getAll(token)); },
+       
     }
 }
  
