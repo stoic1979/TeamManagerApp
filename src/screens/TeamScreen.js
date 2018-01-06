@@ -20,27 +20,30 @@ import CustomButton from '../components/CustomButton'
 
 
 class TeamScreen extends Component {
-     constructor(props) {
+
+    static navigationOptions = {
+        title: "My Team"
+    };
+
+    constructor(props) {
         super(props);
 
         this.state = {
             email: '',
           
         }
-        this._addmember=this._addmember.bind(this);
+        this.addMember = this.addMember.bind(this);
     }
-    static navigationOptions = {
-        title: "My Team"
-    };
 
-
-        _addmember(){
-            console.log(this.state);
-            var params={
-                email: this.state.email,
+    addMember(){
+        console.log("-- addMember --");
+        /*
+        console.log(this.state);
+        var params={
+            email: this.state.email,
               
-                token: this.props.token
-            }
+            token: this.props.token
+        }
                 console.log('---',this.props.token);
             //-----------------------------
             // composing form body
@@ -72,7 +75,8 @@ class TeamScreen extends Component {
             console.log('-----',response);
             }
             )
-      }
+        */
+    }
 
     render() {
 
@@ -98,7 +102,7 @@ class TeamScreen extends Component {
                 <View style={{ height: 10 }} />
                 <CustomButton
                     title="Invite"
-                   onPress={this._addmember}
+                   onPress={this.addMember}
                      
                 />
 
