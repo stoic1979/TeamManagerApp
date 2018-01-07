@@ -37,7 +37,7 @@ class TeamScreen extends Component {
 
     addMember(){
         console.log("-- addMember --");
-        /*
+        
         console.log(this.state);
         var params={
             email: this.state.email,
@@ -75,7 +75,7 @@ class TeamScreen extends Component {
             console.log('-----',response);
             }
             )
-        */
+        
     }
 
     render() {
