@@ -29,7 +29,7 @@ class TeamScreen extends Component {
         super(props);
 
         this.state = {
-            email: '',
+            email: ''
           
         }
         this.addMember = this.addMember.bind(this);
@@ -73,7 +73,7 @@ class TeamScreen extends Component {
           .then((response) => response.json())
           .then((response) => {
             console.log('-----',response);
-            }
+        }
             )
         
     }
@@ -105,7 +105,6 @@ class TeamScreen extends Component {
                    onPress={this.addMember}
                      
                 />
-
                 <Text 
                     style={{fontSize: 27}}>
                     Team Members

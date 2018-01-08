@@ -13,7 +13,7 @@ import { connect } from 'react-redux';
 
 import {login} from '../actions/user.actions';
 
-import CustomButton from '../components/CustomButton'
+import CustomButton from '../components/CustomButton';
 
 
 class LoginScreen extends Component {
@@ -77,7 +77,7 @@ class LoginScreen extends Component {
         console.log("-- formBody: " + formBody);
 
         //----------------------------------------
-        // sending login request to server]
+        // sending login request to server
         // ---------------------------------------
         var proceed = false;
         var token = '';
@@ -162,17 +162,17 @@ class LoginScreen extends Component {
                 <View style={{margin:7}} />
 
                 <View style={{flex: 1, flexDirection: 'row', margin: 10}}>
-                <Button 
+                <CustomButton 
                     color='#1a9187'
                     disabled={this.state.isLoggingIn||!this.state.username||!this.state.password}
                     onPress={this._userLogin}
                     title="Login"
                 />
-                <Button
+                <View style={{width:7}} />
+                <CustomButton
                     title="Register"
                     color='#1a9187'
                     onPress={ () => this.props.navigation.navigate("Register")}
-                    
                 />
                 </View>
                 </ScrollView>

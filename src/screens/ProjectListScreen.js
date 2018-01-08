@@ -7,9 +7,11 @@ import {
     Image,
     StyleSheet,
     ActivityIndicator,
+    Dimensions,
     ListView
 } from 'react-native';
 
+import Moment from 'moment';
 
 import {issueActions} from '../actions';
 
@@ -19,6 +21,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class ProjectListScreen extends Component {
+
+  changeDateFormat(value){
+
+    Moment.locale('en');
+    var dt = value;
+    return(<Text> {Moment(dt).format('d MMM YYYY')} </Text>);
+
+  }
+
 
     static navigationOptions = {
         title: "Projects"
@@ -63,19 +74,23 @@ class ProjectListScreen extends Component {
       var dataSource = ds.cloneWithRows(this.props.projects);
       return (
         <View>
-        <CustomButton title='add project' onPress={this.addproject}/>
+        <CustomButton
+            title='add project'
+            onPress={this.addproject}
+        />
           <ListView
             dataSource={dataSource}
-            renderSeparator = {this.ListViewItemSeparator}
             renderRow={
-              (rowData) => 
-                <View style={{ flex: 1, flexDirection: 'row', margin: 10}}>
-                  <Image source={require('../images/project.png')} style={{width: 40, height: 40}}/>
+              (rowData,sectionID,rowID,highlightRow) => 
+                <View style={{ flex: 1, flexDirection: 'row'}}>
+                  <Image source={require('../images/project.png')} style={{width: 30, height: 30}}/>
+                  <Text style={{fontSize:30,color:'#1a9187'}}>{parseInt(rowID)+1}</Text>
                   <Text 
-                  style={styles.textViewContainer}
-                  onPress = { () => this.showProjectScreen(rowData) } 
+                    style={styles.textViewContainer}
+                    onPress = { () => this.showProjectScreen(rowData)} 
                   >{rowData.title}</Text>
-                </View>   
+                  <Text style={{fontSize:20,color:'#1a9187'}} >{this.changeDateFormat(rowData.created_at)}</Text>
+                </View>
             }
           />
         </View>  
@@ -107,7 +122,7 @@ const mapDispatchToProps = (dispatch) => {
 const styles = StyleSheet.create({
   textViewContainer: {
     textAlignVertical: 'center',
-    width: '70%',
+    width: '50%',
     fontSize: 15,
     color: '#146C80',
     justifyContent: 'center',

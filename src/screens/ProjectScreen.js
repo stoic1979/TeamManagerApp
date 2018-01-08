@@ -67,6 +67,7 @@ class ProjectScreen extends Component {
                 <View style={{ height: 10 }} />
                 <ListView
                     dataSource={dataSource}
+                    enableEmptySections={true}
                     renderRow={
                     (rowData) => 
                     <View style={{ flex: 1, flexDirection: 'row', margin: 10}}>
