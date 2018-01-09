@@ -58,7 +58,7 @@ class LoginScreen extends Component {
         this.setState({isLoggingIn: true, message:''});
 
         var params = {
-            username: this.state.username,
+            email: this.state.username,
             password: this.state.password
         };
         
@@ -93,21 +93,16 @@ class LoginScreen extends Component {
 
             console.log("-- _userLogin :: server resp: " + JSON.stringify(response) );
 
-
-            if (response.error) this.setState({message: response.message});
+            if (response.success===false) {
+                this.setState({message: response.message});
+                this.setState({isLoggingIn:false});
+            }
             else {
              proceed = true;
              token = response.token;
-            }
+             this.props.navigation.navigate("Main");
+         }
           })
-          .then(() => {
-            this.setState({isLoggingIn: false})
-            if (proceed) {
-                this.props.onLogin(this.state.username, token);
-                this.props.navigation.navigate("Main");
-            }
-          })
-          .done();
 
     }//_userLogin
 
@@ -135,7 +130,7 @@ class LoginScreen extends Component {
                 </Text>
                 <TextInput
                     ref={component => this._username = component}
-                    placeholder='Username' 
+                    placeholder='Email' 
                     onChangeText={(username) => this.setState({username})}
                     autoFocus={true}
                     onFocus={this.clearUsername}

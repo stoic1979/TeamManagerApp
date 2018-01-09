@@ -75,7 +75,7 @@ class ProjectListScreen extends Component {
       return (
         <View>
         <CustomButton
-            title='add project'
+            title='Add Project+'
             onPress={this.addproject}
         />
           <ListView

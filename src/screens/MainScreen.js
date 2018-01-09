@@ -8,8 +8,10 @@ import {
     Button,
     Image,
     ActivityIndicator,
-    StyleSheet
+    StyleSheet,
+    BackAndroid
 } from 'react-native';
+import RNExitApp from 'react-native-exit-app';
 
 import { connect } from 'react-redux';
 import {projectActions} from '../actions';
@@ -21,8 +23,17 @@ import ImageButton from '../components/ImageButton'
 
 class MainScreen extends Component {
     static navigationOptions = {
-        title: "Dashboard"
+        title: "Dashboard",
+        header:{
+            visible: false
+        }
     };
+
+    componentDidMount(){
+        BackAndroid.addEventListener('backPress'),()=>{
+            RNExitApp.exitApp();
+        }
+    }
 
     render() {
 

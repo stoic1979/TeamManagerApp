@@ -10,6 +10,7 @@ import {
 
 import { connect } from 'react-redux';
 
+import CustomButton from '../components/CustomButton';
 
 //--------------------------------------------------------------------
 //
@@ -60,8 +61,7 @@ export default class RegisterScreen extends Component {
     	var params = {
             email: this.state.email,
             password: this.state.password,
-            answer: this.state.answer,
-            name: this.state.name
+            answer: this.state.answer
         };
 
         
@@ -141,14 +141,6 @@ export default class RegisterScreen extends Component {
                     autoFocus={true}
                     onFocus={this.clearEmail}
                 />
-
-                <TextInput
-                    ref={component => this._name = component}
-                    placeholder='Name' 
-                    onChangeText={(name) => this.setState({name})}
-                    autoFocus={true}
-                    onFocus={this.clearName}
-                />
                 <TextInput 
                     ref={component => this._password = component}
                     placeholder='Password' 
@@ -174,12 +166,12 @@ export default class RegisterScreen extends Component {
                 {this.state.isRegistering && <ActivityIndicator />}
                 
                 <View style={{flex: 1, flexDirection: 'row', margin: 10}}>
-                  <Button 
+                  <CustomButton 
                     disabled={this.state.isRegistering||!this.state.name||!this.state.password||!this.state.email||!this.state.answer}
                     onPress={this._userRegister}
                     title="Register"
                   />
-                  <Button 
+                  <CustomButton 
                     onPress={ () => this.props.navigation.navigate("Login")}
                     title="Login"
                   />
