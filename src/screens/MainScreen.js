@@ -23,10 +23,7 @@ import ImageButton from '../components/ImageButton'
 
 class MainScreen extends Component {
     static navigationOptions = {
-        title: "Dashboard",
-        header:{
-            visible: false
-        }
+        title: "Dashboard"
     };
 
     componentDidMount(){

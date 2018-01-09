@@ -84,6 +84,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/home/web/work/TeamManagerApp/android/app/build/intermediates/exploded-aar/TeamManagerPro/react-native-exit-app/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="144f49a2488be86d5cde9ee5f6e17348391b5027">
+        <dex dex="/home/web/work/TeamManagerApp/android/app/build/intermediates/pre-dexed/debug/TeamManagerPro-react-native-exit-app-unspecified_e1c24d35a7d23d0a6f7f0d131c9ee8b920036ac6.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/web/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
