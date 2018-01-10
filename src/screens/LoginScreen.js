@@ -24,10 +24,6 @@ class LoginScreen extends Component {
     };
 
 
-    //-------------------------
-    // states
-    //-------------------------
-
 
     constructor(props) {
         super(props);
@@ -39,8 +35,6 @@ class LoginScreen extends Component {
             message: ''
         }
 
-        this.clearUsername = this.clearUsername.bind(this);
-        this.clearPassword = this.clearPassword.bind(this);
 
     }
 
@@ -74,7 +68,7 @@ class LoginScreen extends Component {
         }
         formBody = formBody.join("&");
 
-        console.log("-- formBody: " + formBody);
+        console.log("[LoginScreen] :: formBody: " + formBody);
 
         //----------------------------------------
         // sending login request to server
@@ -91,7 +85,7 @@ class LoginScreen extends Component {
           .then((response) => response.json())
           .then((response) => {
 
-            console.log("-- _userLogin :: server resp: " + JSON.stringify(response) );
+            console.log("[LoginScreen] :: _userLogin :: server resp: " + JSON.stringify(response) );
 
             if (response.success===false) {
                 this.setState({message: response.message});
@@ -100,21 +94,14 @@ class LoginScreen extends Component {
             else {
              proceed = true;
              token = response.token;
+             console.log("[LoginScreen] :: token="+response.token);
+             this.props.onLogin(response.email,response.token);
              this.props.navigation.navigate("Main");
          }
           })
 
     }//_userLogin
 
-    clearUsername = () => {
-        this._username.setNativeProps({ text: '' });
-        this.setState({ message: '' });
-    }
-
-    clearPassword = () => {
-        this._password.setNativeProps({ text: '' });
-        this.setState({ message: '' });
-    }
 
 
     render() {
@@ -133,14 +120,12 @@ class LoginScreen extends Component {
                     placeholder='Email' 
                     onChangeText={(username) => this.setState({username})}
                     autoFocus={true}
-                    onFocus={this.clearUsername}
                 />
                 <TextInput 
                     ref={component => this._password = component}
                     placeholder='Password' 
                     onChangeText={(password) => this.setState({password})}
                     secureTextEntry={true}
-                    onFocus={this.clearPassword}
                     onSubmitEditing={this._userLogin}
                 />
 
@@ -184,7 +169,7 @@ const mapStateToProps = (state, ownProps) => {
  
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLogin: (username, token) => { dispatch(login(username, token)); }
+        onLogin: (email, token) => { dispatch(login(email, token)); }
         //onSignUp: (username, password) => { dispatch(signup(username, password)); }
     }
 }

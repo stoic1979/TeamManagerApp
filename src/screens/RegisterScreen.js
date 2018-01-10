@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
     ScrollView,
     Text,
+    Picker,
     TextInput,
     View,
     Button,
@@ -34,17 +35,14 @@ export default class RegisterScreen extends Component {
 
         this.state = {
             isRegistering: false,
-            name: '',
+            email: '',
             password: '',
-            email:'',
-            answer:'',
+            first_name:'',
+            last_name:'',
+            role:'MANAGER',
             message:''
         }
 
-        this.clearName = this.clearName.bind(this);
-        this.clearPassword = this.clearPassword.bind(this);
-        this.clearEmail = this.clearEmail.bind(this);
-        this.clearAnswer = this.clearAnswer.bind(this);
 
 
     }
@@ -55,13 +53,16 @@ export default class RegisterScreen extends Component {
 	//--------------------------------------------------
     _userRegister = () => { 
     	console.log('--User Register--');
+        console.log(this.state);
     	this.setState({isRegistering: true, message:''});
 
 
     	var params = {
             email: this.state.email,
             password: this.state.password,
-            answer: this.state.answer
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            role: this.state.role
         };
 
         
@@ -81,7 +82,7 @@ export default class RegisterScreen extends Component {
         // sending register request to server
         //---------------------------------------
         var proceed=false;
-        fetch('https://teammanager9.herokuapp.com/users/register', {
+        fetch('https://teammanager9.herokuapp.com/users/signup', {
         	method: "POST",
         	headers: {
         		'Content-Type': 'application/x-www-form-urlencoded'
@@ -89,38 +90,22 @@ export default class RegisterScreen extends Component {
         	body : formBody
         })
 		.then((response) => {
-			console.log("--1 response--" + JSON.stringify(response) );
-			return response.json()
-		})
-		.then((response) => {
-			console.log("--2 response--" + response);
-			if(response.error) this.setState({message:response.message});
-			else proceed=true;
-		})
-		.then(() => {
-			this.setState({isRegistering:false})
-			//if(proceed) this.props.onRegisterDone();
-		})
+            response.json()
+        .then((response)=>{
+            if(response.success){
+            this.setState({message:response.message});
+            this.setState({isRegistering: false});
+        }else{
+            this.setState({message:response.errmsg});
+            this.setState({isRegistering: false});
+        }
+        }
+            )
+        })
 		.done();
     }//UserRegister
 
-    clearName = () => {
-        this._name.setNativeProps({ text: '' });
-        this.setState({ message: '' });
-    }
 
-    clearPassword = () => {
-        this._password.setNativeProps({ text: '' });
-        this.setState({ message: '' });
-    }
-    clearEmail = () => {
-        this._email.setNativeProps({ text: '' });
-        this.setState({ message: '' });
-    }
-    clearAnswer = () => {
-        this._answer.setNativeProps({ text: '' });
-        this.setState({ message: '' });
-    }
 
 
 
@@ -129,54 +114,53 @@ export default class RegisterScreen extends Component {
         console.log("-- RegisterScreen render(), state: " + JSON.stringify(this.state));
 
         return (
-            <ScrollView style={{padding: 20}}>
-                <Text 
-                    style={{fontSize: 27}}>
-                    Register
-                </Text>
+            <View style={{margin:20}}>
+                <Text style={{fontSize:20}}>Register</Text>
                 <TextInput
                     ref={component => this._email = component}
-                    placeholder='Email' 
+                    placeholder='Email'
+                    value={this.state.email}
                     onChangeText={(email) => this.setState({email})}
                     autoFocus={true}
-                    onFocus={this.clearEmail}
-                />
-                <TextInput 
-                    ref={component => this._password = component}
-                    placeholder='Password' 
-                    onChangeText={(password) => this.setState({password})}
-                    secureTextEntry={true}
-                    onFocus={this.clearPassword}
-                    onSubmitEditing={this._userLogin}
                 />
                 <TextInput
-                    ref={component => this._answer = component}
-                    placeholder='Security Answer' 
-                    onChangeText={(answer) => this.setState({answer})}
-                    autoFocus={true}
-                    onFocus={this.clearAnswer}
+                    ref={component => this._email = component}
+                    placeholder='Password'
+                    value={this.state.password}
+                    secureTextEntry={true}
+                    onChangeText={(password) => this.setState({password})}
                 />
-                                {!!this.state.message && (
+                <TextInput
+                    ref={component => this._first_name = component}
+                    placeholder='First Name'
+                    value={this.state.first_name}
+                    onChangeText={(first_name) => this.setState({first_name})}
+                />
+                <TextInput
+                    ref={component => this._last_name = component}
+                    placeholder='Last Name'
+                    value={this.state.last_name}
+                    onChangeText={(last_name) => this.setState({last_name})}
+                />
+                <Picker
+                    selectedValue={this.state.role}
+                    onValueChange={(value)=>this.setState({role:value})}>
+                <Picker.Item label="Manager" value="MANAGER" />
+                <Picker.Item label="Worker" value="WORKER" />
+                </Picker>
+                {!!this.state.message && (
                     <Text
                         style={{fontSize: 14, color: 'red', padding: 5}}>
                     {this.state.message}
                     </Text>
                 )}
-
                 {this.state.isRegistering && <ActivityIndicator />}
-                
-                <View style={{flex: 1, flexDirection: 'row', margin: 10}}>
-                  <CustomButton 
-                    disabled={this.state.isRegistering||!this.state.name||!this.state.password||!this.state.email||!this.state.answer}
+                <Button
+                    title='register'
+                    disabled={!this.state.email||!this.state.password||!this.state.first_name||!this.state.last_name||!this.state.role}
                     onPress={this._userRegister}
-                    title="Register"
-                  />
-                  <CustomButton 
-                    onPress={ () => this.props.navigation.navigate("Login")}
-                    title="Login"
-                  />
-                </View>
-            </ScrollView>
+                />
+            </View>
         )//return
     }//render
 }//RegisterScreen

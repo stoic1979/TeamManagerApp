@@ -1,8 +1,8 @@
-export const login = (username, token) => {
+export const login = (email, token) => {
     console.log(" user action got token: " + token);
     return {
         type: 'LOGIN',
-        username: username,
+        email: email,
         token: token
     };
 };
@@ -13,7 +13,7 @@ export const logout = () => {
     };
 };
  
-export const signup = (username, token) => {
+export const signup = (email, token) => {
     return (dispatch) => {
     };
 };

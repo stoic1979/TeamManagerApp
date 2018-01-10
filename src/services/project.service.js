@@ -14,9 +14,6 @@ function getAll(token) {
 
           //console.log("+++++++ projectService resp: " + JSON.stringify(response) );
 
-          if (!response.ok) {
-            return Promise.reject(response.statusText);
-          }
 
           return response.json();
         })

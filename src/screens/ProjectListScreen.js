@@ -18,6 +18,7 @@ import {issueActions} from '../actions';
 import CustomButton from '../components/CustomButton';
 
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 
 class ProjectListScreen extends Component {
@@ -41,13 +42,6 @@ class ProjectListScreen extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            username: '',
-            password: '',
-            isLoggingIn: false,
-            message: ''
-        }
-
         this.showProjectScreen = this.showProjectScreen.bind(this);
         this.addproject = this.addproject.bind(this);
     }
@@ -63,6 +57,8 @@ class ProjectListScreen extends Component {
       this.props.getAllIssues(this.props.token, project._id);
       this.props.navigation.navigate("Project", {project: project})
     }
+
+    
 
     //-------------------------
     // render

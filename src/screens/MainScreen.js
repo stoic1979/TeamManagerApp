@@ -9,7 +9,7 @@ import {
     Image,
     ActivityIndicator,
     StyleSheet,
-    BackAndroid
+    BackHandler
 } from 'react-native';
 import RNExitApp from 'react-native-exit-app';
 
@@ -27,14 +27,14 @@ class MainScreen extends Component {
     };
 
     componentDidMount(){
-        BackAndroid.addEventListener('backPress'),()=>{
+        BackHandler.addEventListener('backPress'),()=>{
             RNExitApp.exitApp();
         }
     }
 
     render() {
 
-        console.log("-- MainScreen render() :: username: " + this.props.username );
+        console.log("-- MainScreen render() :: email: " + this.props.email );
         console.log("-- MainScreen render() :: token: " + this.props.token );
 
         setToken(this.props.token);
@@ -82,7 +82,7 @@ class MainScreen extends Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        username: state.auth.username,
+        email: state.auth.email,
         token: state.auth.token
     };
 }

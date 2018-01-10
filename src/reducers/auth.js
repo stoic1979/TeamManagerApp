@@ -1,23 +1,24 @@
 const defaultState = {
     isLoggedIn: false,
-    username: '',
+    email: '',
     token: ''
 };
  
 export default function reducer(state = defaultState, action) {
     switch (action.type) {
         case 'LOGIN': 
-            console.log(" user reducer got username: " + action.username);
+        console.log(action.token);
+            console.log(" user reducer got email: " + action.email);
 
             return Object.assign({}, state, { 
                 isLoggedIn: true,
-                username: action.username,
+                email: action.email,
                 token: action.token
             });
         case 'LOGOUT':
             return Object.assign({}, state, { 
                 isLoggedIn: false,
-                username: '',
+                email: '',
                 token: ''
             });
         default:
