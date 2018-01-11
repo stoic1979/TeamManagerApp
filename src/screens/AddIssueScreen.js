@@ -2,6 +2,8 @@ import React from 'react';
 import {Text,
         TextInput,
         View,
+        ScrollView,
+        ListView,
         Picker,
         Button
   } from 'react-native';
@@ -29,9 +31,21 @@ class AddIssueScreen extends React.Component{
         status:'',
         start_date:'',
         end_date:'',
-        estimated_hours:''
+        estimated_hours:'',
+        data:[]
 			}
 			this._AddIssue = this._AddIssue.bind(this);
+      fetch("https://teammanager9.herokuapp.com/members/all", {
+            method: "GET", 
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded','x-access-token': this.props.token
+            }
+          })
+            .then((response)=>response.json())
+            .then((response)=>{
+              this.setState({data:response});
+              console.log('>>>>>>>>>>>>>>>>>'+this.state.data);
+            })
 		}
 
 
@@ -40,10 +54,10 @@ class AddIssueScreen extends React.Component{
       console.log(this.props.token);
       console.log(this.props);
       var params={
-        project: '5a0a99ee5080650004f627a3',//hardcoded value
+        project: this.props.navigation.state.params.project._id,
         summary: this.state.summary,
         description: this.state.description,
-        assignee: '5a086f58bd0af70004bbae39',//hardcoded value
+        assignee: this.state.assignee,
         priority: this.state.priority,
         type: this.state.type,
         status: this.state.status,
@@ -83,9 +97,11 @@ class AddIssueScreen extends React.Component{
 
 			}
 
-	render(){
+	render(){   
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        var dataSource = ds.cloneWithRows(this.state.data);
 		return(
-		<View>
+    <ScrollView>
 			<TextInput
             ref={component => this._summary = component}
             placeholder='Summary' 
@@ -98,9 +114,12 @@ class AddIssueScreen extends React.Component{
       />
       <Picker
           selectedValue={this.state.assignee}
+          isDynamic={true}
           onValueChange={(itemValue) => this.setState({assignee: itemValue})}>
-              <Picker.Item label="NSK" value="NSK" />
-              <Picker.Item label="tom" value="tom" />
+          { this.state.data.map((data,key)=>(
+            <Picker.Item label={data.user.first_name} value={data.user._id} key={key} />)
+            )}
+              
       </Picker>
       <Picker
           selectedValue={this.state.priority}
@@ -145,7 +164,7 @@ class AddIssueScreen extends React.Component{
             onPress={this._AddIssue}
             title="Add Issue"
       />
-		</View>
+		</ScrollView>
       );//return
 	}//render
 }//AddProjectScreen

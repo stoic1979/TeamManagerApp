@@ -31,9 +31,6 @@ class ProjectScreen extends Component {
 
       console.log("[ProjectScreen] showIssueScreen () - issue: " + JSON.stringify(issue));
       this.props.navigation.navigate('AddIssue', {project: this.props.navigation.state.params.project});
-
-      //this.props.getAllIssues(this.props.token, project._id);
-      //this.props.navigation.navigate("Project", {project: project})
     }
 
     render() {
@@ -58,7 +55,7 @@ class ProjectScreen extends Component {
                     onPress={
                          () => {
                             this.props.getAllProjects(this.props.token);
-                            this.props.navigation.navigate("AddIssue");
+                            this.props.navigation.navigate("AddIssue",{project:this.props.navigation.state.params.project});
                         }
                      }
                     >

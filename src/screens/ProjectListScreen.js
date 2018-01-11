@@ -50,12 +50,12 @@ class ProjectListScreen extends Component {
       this.props.navigation.navigate("AddProject");
     }
 
-    showProjectScreen(project) {
+    showProjectScreen(rowData) {
 
-      console.log("[ProjectListScreen] showProjectScreen () - project: " + JSON.stringify(project));
+      console.log("[ProjectListScreen] showProjectScreen () - project: " + JSON.stringify(rowData));
 
-      this.props.getAllIssues(this.props.token, project._id);
-      this.props.navigation.navigate("Project", {project: project})
+      this.props.getAllIssues(this.props.token, rowData._id);
+      this.props.navigation.navigate("Project", {project: rowData})
     }
 
     
