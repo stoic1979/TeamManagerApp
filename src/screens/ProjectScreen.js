@@ -26,12 +26,19 @@ class ProjectScreen extends Component {
         title: "Project"
     };
 
+    //-----------------------
+    // showIssueScreen
+    //-----------------------
 
     showIssueScreen(issue) {
 
       console.log("[ProjectScreen] showIssueScreen () - issue: " + JSON.stringify(issue));
       this.props.navigation.navigate('AddIssue', {project: this.props.navigation.state.params.project});
     }
+
+    //-----------------
+    // render function
+    //-----------------
 
     render() {
 
@@ -45,6 +52,11 @@ class ProjectScreen extends Component {
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
         var dataSource = ds.cloneWithRows(this.props.issues);
+        
+
+        //-------------------
+        // return
+        //-------------------
         
         return (
             <View style={{padding: 20}}>
@@ -78,8 +90,8 @@ class ProjectScreen extends Component {
           />
 
             </View>
-        );
-    }
+        );//return
+    }//render
 }//ProjectScreen
 
 const mapStateToProps = (state, ownProps) => {

@@ -26,6 +26,10 @@ class MainScreen extends Component {
         title: "Dashboard"
     };
 
+    //----------------------
+    // componentDidMount
+    //----------------------
+
     componentDidMount(){
         BackHandler.addEventListener('backPress'),()=>{
             RNExitApp.exitApp();
@@ -77,8 +81,8 @@ class MainScreen extends Component {
                 <View style={{ height: 10 }} />    
 
             </View>
-        );
-    }
+        );//return
+    }//render
 }//MainScreen
 
 const mapStateToProps = (state, ownProps) => {

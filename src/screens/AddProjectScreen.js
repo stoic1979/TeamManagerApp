@@ -5,29 +5,40 @@ import {connect} from 'react-redux';
 import CustomButton from '../components/CustomButton';
 
 class AddProjectScreen extends React.Component{
-	 static navigationOptions = {
+	
+
+  static navigationOptions = {
         title: "Add new Project"
-    };
-    //---------------------
-    // constructor
-    //--------------------
-		constructor(props){
-			super(props);
-			this.state={
+  };
+
+
+  //---------------------
+  // constructor
+  //--------------------
+	constructor(props){
+		super(props);
+
+    //------------------
+    // state
+    //------------------
+
+	  this.state={
 				title:'',
 				description:''
-			}
-			this._addproject = this._addproject.bind(this);
 		}
+		this._addproject = this._addproject.bind(this);
+	}
 
-
-		_addproject(){
-			console.log(this.state);
-			var params={
+  //-----------------------
+  // _addproject
+  //-----------------------  
+	_addproject() {
+  	console.log(this.state);
+		var params={
 				title: this.state.title,
 				description: this.state.description,
 				token: this.props.token
-			}
+		}
 				console.log('---',this.props.token);
 			//-----------------------------
 			// composing form body
@@ -40,26 +51,25 @@ class AddProjectScreen extends React.Component{
         }
         formBody = formBody.join("&");
 
-        console.log("-- formBody: " + formBody);
+      console.log("-- formBody: " + formBody);
 
-        //------------------------
-        //  sending data to API
-        //------------------------
+      //------------------------
+      //  sending data to API
+      //------------------------
 
 
-        fetch("https://teammanager9.herokuapp.com/projects/add", {
-            method: "POST", 
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
+      fetch("https://teammanager9.herokuapp.com/projects/add", {
+          method: "POST", 
+          headers: {
+           'Content-Type': 'application/x-www-form-urlencoded'
             },
             body: formBody
           })
           .then((response) => response.json())
           .then((response) => {
           	console.log('-----',response);
-            }
-            )
-      }
+          })
+  }//_addproject
 
 	render(){
 		return(
@@ -74,10 +84,10 @@ class AddProjectScreen extends React.Component{
             placeholder='Description' 
             onChangeText={(description) => this.setState({description})}
       />
-     <CustomButton 
+      <CustomButton 
             onPress={this._addproject}
             title="Add Project"
-                />
+      />
 		</View>
       );//return
 	}//render

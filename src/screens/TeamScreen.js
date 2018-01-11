@@ -19,37 +19,46 @@ import {setToken} from "../prefs";
 import CustomButton from '../components/CustomButton'
 
 
+
 class TeamScreen extends Component {
 
     static navigationOptions = {
         title: "My Team"
     };
 
+    //------------------
+    // constructor
+    //------------------
     constructor(props) {
         super(props);
 
+        //--------------
+        // state
+        //--------------
         this.state = {
             email: '',
-            data:[]
-          
+            data:[]         
         }
 
         this.addMember = this.addMember.bind(this);
-         console.log("-- TeamScreen render() :: token: " + this.props.token );
+        console.log("-- TeamScreen render() :: token: " + this.props.token );
+        
         fetch("https://teammanager9.herokuapp.com/members/all", {
             method: "GET", 
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded','x-access-token': this.props.token
             }
-          })
-            .then((response)=>response.json())
-            .then((response)=>{
-                this.setState({data:response});
-                console.log(this.state.data);
-            })
-
+        })
+        .then((response)=>response.json())
+        .then((response)=>{
+            this.setState({data:response});
+            console.log(this.state.data);
+        })
     }
 
+    //----------------------
+    // addMember function
+    //----------------------
     addMember(){
         console.log("-- addMember --");
         
@@ -59,11 +68,13 @@ class TeamScreen extends Component {
               
             token: this.props.token
         }
-                console.log('---',this.props.token);
-            //-----------------------------
-            // composing form body
-            //-----------------------------
-            var formBody = [];
+
+        console.log('---',this.props.token);
+
+        //-----------------------------
+        // composing form body
+        //-----------------------------
+        var formBody = [];
         for (var property in params) {
           var encodedKey = encodeURIComponent(property);
           var encodedValue = encodeURIComponent(params[property]);
@@ -76,8 +87,6 @@ class TeamScreen extends Component {
         //------------------------
         //  sending data to API
         //------------------------
-
-
         fetch("https://teammanager9.herokuapp.com/members/invite_team_member", {
             method: "POST", 
             headers: {
@@ -85,21 +94,17 @@ class TeamScreen extends Component {
             },
             body: formBody
           })
-          .then((response) => response.json())
-          .then((response) => {
+        .then((response) => response.json())
+        .then((response) => {
             console.log('-----',response);
-        }
-            )
-        
+        })      
     }
        
-    
-
-
+    //------------------
+    // render function
+    //------------------
     render() {
 
-
-        
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         var dataSource = ds.cloneWithRows(this.state.data);
 
@@ -131,8 +136,8 @@ class TeamScreen extends Component {
                 />
 
             </View>
-        );
-    }
+        );// return
+    }// render
 }//TeamScreen
 
 const mapStateToProps = (state, ownProps) => {

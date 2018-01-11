@@ -25,14 +25,17 @@ export default class RegisterScreen extends Component {
         title: "TM Register"
     };
 
-	//--------------
-	// states
-	//--------------
-    
+    //-----------------
+    // constructor
+    //-----------------
 
     constructor(props) {
         super(props);
 
+    //--------------
+    // states
+    //--------------
+    
         this.state = {
             isRegistering: false,
             email: '',
@@ -106,13 +109,18 @@ export default class RegisterScreen extends Component {
     }//UserRegister
 
 
-
-
+    //---------------
+    // render
+    //---------------
 
     render() {
 
         console.log("-- RegisterScreen render(), state: " + JSON.stringify(this.state));
 
+        //-------------------
+        // return
+        //-------------------
+        
         return (
             <View style={{margin:20}}>
                 <Text style={{fontSize:20}}>Register</Text>

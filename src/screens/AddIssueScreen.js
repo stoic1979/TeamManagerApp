@@ -22,6 +22,12 @@ class AddIssueScreen extends React.Component{
 
 		constructor(props){
 			super(props);
+
+      //----------------------
+      // state
+      //----------------------
+
+
 			this.state={
         summary:'',
         description:'',
@@ -35,6 +41,11 @@ class AddIssueScreen extends React.Component{
         data:[]
 			}
 			this._AddIssue = this._AddIssue.bind(this);
+
+      //-----------------------------
+      // member list
+      //-----------------------------
+
       fetch("https://teammanager9.herokuapp.com/members/all", {
             method: "GET", 
             headers: {
@@ -48,6 +59,9 @@ class AddIssueScreen extends React.Component{
             })
 		}
 
+    //------------------------------
+    // _AddIssue function
+    //------------------------------
 
 		_AddIssue(){
 			console.log(this.state);

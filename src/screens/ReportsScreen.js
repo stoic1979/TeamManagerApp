@@ -22,6 +22,10 @@ class ReportsScreen extends Component {
         title: "Reports"
     };
 
+    //---------------
+    // render
+    //---------------
+
     render() {
 
         console.log("-- ReportsScreen render() :: username: " + this.props.username );
@@ -40,8 +44,8 @@ class ReportsScreen extends Component {
                 </Text>
                 
             </View>
-        );
-    }
+        );//return
+    }//render
 }//ReportsScreen
 
 const mapStateToProps = (state, ownProps) => {

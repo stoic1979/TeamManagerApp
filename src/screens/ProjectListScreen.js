@@ -23,6 +23,11 @@ import { connect } from 'react-redux';
 
 class ProjectListScreen extends Component {
 
+
+  //--------------------
+  // changeDateFormat
+  //--------------------
+
   changeDateFormat(value){
 
     Moment.locale('en');
@@ -46,9 +51,18 @@ class ProjectListScreen extends Component {
         this.addproject = this.addproject.bind(this);
     }
 
+
+    //---------------------------
+    // add Project
+    //---------------------------
     addproject(){
       this.props.navigation.navigate("AddProject");
     }
+
+
+    //--------------------------
+    // showProjectScreen
+    //--------------------------
 
     showProjectScreen(rowData) {
 

@@ -23,11 +23,17 @@ class LoginScreen extends Component {
         title: "TM Login"
     };
 
-
+    //------------------
+    // constructor
+    //------------------
 
     constructor(props) {
         super(props);
 
+        //-------------------
+        // state
+        //-------------------
+        
         this.state = {
             username: '',
             password: '',
@@ -97,8 +103,8 @@ class LoginScreen extends Component {
              console.log("[LoginScreen] :: token="+response.token);
              this.props.onLogin(response.email,response.token);
              this.props.navigation.navigate("Main");
-         }
-          })
+            }
+            })
 
     }//_userLogin
 
