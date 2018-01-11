@@ -58,6 +58,7 @@ class MainScreen extends Component {
                     img={require('../images/icon.png')}
                     onPress={
                         () => {
+                            this.props.getAll
                             this.props.navigation.navigate("Team");
                         }
                      }
@@ -90,7 +91,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onLogout: () => { dispatch(logout()); },
-        getAllProjects: (token) => { dispatch(projectActions.getAll(token)); }
+        getAllProjects: (token) => { dispatch(projectActions.getAll(token)); },
+        getAllMembers: (token) =>{ dispatch(teamMemberActions.getAll(token)); }
     }
 }
 

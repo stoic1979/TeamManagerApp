@@ -51,14 +51,14 @@ function create(token,email) {
 //
 
 
-function getAll() {
+function getAll(token) {
 
   console.log("====== getAll ======");
 
   return (dispatch) => {
     dispatch(request());
 
-    teamMemberService.getAll()
+    teamMemberService.getAll(token)
             .then(
                 (team_member) => dispatch(success(team_member)),
                 (error) => dispatch(failure(error))

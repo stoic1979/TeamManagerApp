@@ -29,10 +29,25 @@ class TeamScreen extends Component {
         super(props);
 
         this.state = {
-            email: ''
+            email: '',
+            data:[]
           
         }
+
         this.addMember = this.addMember.bind(this);
+         console.log("-- TeamScreen render() :: token: " + this.props.token );
+        fetch("https://teammanager9.herokuapp.com/members/all", {
+            method: "GET", 
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded','x-access-token': this.props.token
+            }
+          })
+            .then((response)=>response.json())
+            .then((response)=>{
+                this.setState({data:response});
+                console.log(this.state.data);
+            })
+
     }
 
     addMember(){
@@ -77,16 +92,16 @@ class TeamScreen extends Component {
             )
         
     }
+       
+    
+
 
     render() {
 
-      
-        console.log("-- TeamScreen render() :: token: " + this.props.token );
 
-        setToken(this.props.token);
-
+        
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-        var dataSource = ds.cloneWithRows(['Tom', 'Jerry']);
+        var dataSource = ds.cloneWithRows(this.state.data);
 
         return (
             <View style={{padding: 20}}>
@@ -110,8 +125,9 @@ class TeamScreen extends Component {
                     Team Members
                 </Text>
                 <ListView
+                    enableEmptySections={true}
                     dataSource={dataSource}
-                    renderRow={(rowData) => <Text>{rowData}</Text>}
+                    renderRow={(rowData) => <Text>{rowData.user.first_name} {rowData.user.last_name}</Text>}
                 />
 
             </View>
@@ -122,7 +138,8 @@ class TeamScreen extends Component {
 const mapStateToProps = (state, ownProps) => {
     return {
         username: state.auth.username,
-        token: state.auth.token
+        token: state.auth.token,
+        team_member: state.team_member
     };
 }
  
@@ -130,6 +147,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onLogout: () => { dispatch(logout()); },
         getAllProjects: (token) => { dispatch(projectActions.getAll(token)); },
+        getAllMembers: (token) =>{dispatch(teamMemberActions.getAll(token));}
        
     }
 }

@@ -1,6 +1,6 @@
 import {teamMemberConstants} from '../constants';
 
-export function teamMember(state = {}, action) {
+export function teamMember(state={}, action) {
   switch (action.type) {
     case teamMemberConstants.GETALL_REQUEST:
       return {

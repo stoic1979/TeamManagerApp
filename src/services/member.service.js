@@ -57,9 +57,9 @@ function getAll(token) {
 
     const requestOptions = {
         method: 'GET',
-        headers: {'x-access-token': token},
+        headers: {'x-access-token': token, 'Content-Type': 'application/x-www-form-urlencoded'},
     };
-    const url = `${settings.API_ROOT}/members/all`
+    const url = `https://teammanager9.herokuapp.com/members/all`
     return fetch(url, requestOptions)
     .then((response) => {
 
