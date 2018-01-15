@@ -3,9 +3,13 @@ import {
     Text,
     TextInput,
     View,
+    Image,
     Button,
+    Dimensions,
+    ImageBackground,
     ActivityIndicator
 } from 'react-native';
+
 
 import React, { Component } from 'react';
 
@@ -50,8 +54,6 @@ class LoginScreen extends Component {
     //-----------------------------------------------
     _userLogin = () => { 
 
-
-
         console.log("-- _userLogin  --");
 
 
@@ -59,7 +61,8 @@ class LoginScreen extends Component {
 
         var params = {
             email: this.state.username,
-            password: this.state.password
+            password: this.state.password 
+
         };
         
 
@@ -103,8 +106,9 @@ class LoginScreen extends Component {
              console.log("[LoginScreen] :: token="+response.token);
              this.props.onLogin(response.email,response.token);
              this.props.navigation.navigate("Main");
+             this.exit; 
             }
-            })
+        })
 
     }//_userLogin
 
@@ -114,22 +118,30 @@ class LoginScreen extends Component {
         console.log("-- LoginScreen render()  --");
 
         return (
-            <ScrollView style={{padding: 20}}>
-                <View style={{height:100}} />
+            <ImageBackground  style={{  padding: 10, width: Dimensions.get('window').width, height: Dimensions.get('window').height }} source={require('../images/bg1.png')}>
+
+                <Image source={require('../images/tmtitle.png') } style={{ marginTop: 20, width: Dimensions.get('window').width, height: 60}}/>   
+
+                <View style={{height:50}} />
 
                 <Text 
-                    style={{fontSize: 27}}>
+                    style={{fontSize: 27, color: 'white' }}>
                     Login
                 </Text>
+
                 <TextInput
+                    style= {{ fontSize: 18, color: 'white' }} 
                     ref={component => this._username = component}
-                    placeholder='Email' 
+                    placeholder='Email'
+                    placeholderTextColor= 'white' 
                     onChangeText={(username) => this.setState({username})}
                     autoFocus={true}
                 />
                 <TextInput 
+                    style= {{ fontSize: 18, color: 'white' }} 
                     ref={component => this._password = component}
                     placeholder='Password' 
+                    placeholderTextColor= 'white' 
                     onChangeText={(password) => this.setState({password})}
                     secureTextEntry={true}
                     onSubmitEditing={this._userLogin}
@@ -147,7 +159,7 @@ class LoginScreen extends Component {
                 
                 <View style={{margin:7}} />
 
-                <View style={{flex: 1, flexDirection: 'row', margin: 10}}>
+                <View style={{flex: 1, flexDirection: 'row', margin: 10, justifyContent: 'center', alignItems: 'center'}}>
                 <CustomButton 
                     color='#1a9187'
                     disabled={this.state.isLoggingIn||!this.state.username||!this.state.password}
@@ -161,7 +173,9 @@ class LoginScreen extends Component {
                     onPress={ () => this.props.navigation.navigate("Register")}
                 />
                 </View>
-                </ScrollView>
+
+                </ImageBackground>
+
             )//return
     }//render
 }//LoginScreen

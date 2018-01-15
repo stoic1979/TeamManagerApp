@@ -32,7 +32,7 @@ class ProjectListScreen extends Component {
 
     Moment.locale('en');
     var dt = value;
-    return(<Text> {Moment(dt).format('d MMM YYYY')} </Text>);
+    return(<Text> {Moment(dt).format('YYYY/MM/d')} </Text>);
 
   }
 
@@ -92,14 +92,14 @@ class ProjectListScreen extends Component {
             dataSource={dataSource}
             renderRow={
               (rowData,sectionID,rowID,highlightRow) => 
-                <View style={{ flex: 1, flexDirection: 'row'}}>
-                  <Image source={require('../images/project.png')} style={{width: 30, height: 30}}/>
-                  <Text style={{fontSize:30,color:'#1a9187'}}>{parseInt(rowID)+1}</Text>
+                <View style={{ margin: 6, flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
+                  <Text style={{fontSize:20, marginLeft: 10,color:'#1a9187'}}>{parseInt(rowID)+1}</Text>
+                  <Image source={require('../images/project.png')} style={{marginLeft: 10, width: 30, height: 30}}/>
                   <Text 
                     style={styles.textViewContainer}
                     onPress = { () => this.showProjectScreen(rowData)} 
                   >{rowData.title}</Text>
-                  <Text style={{fontSize:20,color:'#1a9187'}} >{this.changeDateFormat(rowData.created_at)}</Text>
+                  <Text style={{fontSize:18,color:'#1a9187'}} >{this.changeDateFormat(rowData.created_at)}</Text>
                 </View>
             }
           />
@@ -133,10 +133,10 @@ const styles = StyleSheet.create({
   textViewContainer: {
     textAlignVertical: 'center',
     width: '50%',
-    fontSize: 15,
+    fontSize: 18,
     color: '#146C80',
     justifyContent: 'center',
-    marginLeft: 10,
+    marginLeft: 12,
   }
 
 });

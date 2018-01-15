@@ -44,7 +44,7 @@ class MainScreen extends Component {
         setToken(this.props.token);
 
         return (
-            <View style={GlobalStyle.container}>
+            <View style={styles.container}>
                 <ImageButton
                     title="Projects"
                     img={require('../images/icon.png')}
@@ -101,7 +101,16 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const styles = {
-  btnColor: '#146C80'
+  btnColor: '#146C80',
+
+  container: {
+    justifyContent: 'center',
+        borderRadius: 4,
+        borderWidth: 0.5,
+        borderColor: '#d6d7da',
+        padding: 10,
+
+    },
 
 };
  
