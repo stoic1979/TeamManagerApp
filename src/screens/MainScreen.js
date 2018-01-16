@@ -11,6 +11,12 @@ import {
     StyleSheet,
     BackHandler
 } from 'react-native';
+
+import {TabNavigator} from 'react-navigation';
+
+import ProjectListScreen from '../screens/ProjectListScreen';
+import TeamScreen from '../screens/TeamScreen';
+import ReportsScreen from '../screens/ReportsScreen';
 import RNExitApp from 'react-native-exit-app';
 
 import { connect } from 'react-redux';
@@ -21,6 +27,7 @@ import CustomButton from '../components/CustomButton'
 import ImageButton from '../components/ImageButton'
 
 
+
 class MainScreen extends Component {
     static navigationOptions = {
         title: "Dashboard"
@@ -29,14 +36,15 @@ class MainScreen extends Component {
     //----------------------
     // componentDidMount
     //----------------------
-
-    componentDidMount(){
-        BackHandler.addEventListener('backPress'),()=>{
-            RNExitApp.exitApp();
-        }
-    }
+    
 
     render() {
+        this.props.getAllProjects(this.props.token);
+        const AppNavigator=TabNavigator({
+      Projects: {screen: ProjectListScreen},
+      Report: {screen: ReportsScreen},
+      Team: {screen: TeamScreen}
+  },{tabBarPosition:'bottom'});
 
         console.log("-- MainScreen render() :: email: " + this.props.email );
         console.log("-- MainScreen render() :: token: " + this.props.token );
@@ -44,43 +52,7 @@ class MainScreen extends Component {
         setToken(this.props.token);
 
         return (
-            <View style={styles.container}>
-                <ImageButton
-                    title="Projects"
-                    img={require('../images/icon.png')}
-                    onPress={
-                         () => {
-                            this.props.getAllProjects(this.props.token);
-                            this.props.navigation.navigate("ProjectList");
-                        }
-                     }
-                    />
-                
-                <View style={{ height: 10 }} />
-                <ImageButton
-                    title="My Team"
-                    img={require('../images/icon.png')}
-                    onPress={
-                        () => {
-                            this.props.getAll
-                            this.props.navigation.navigate("Team");
-                        }
-                     }
-                />
-                <View style={{ height: 10 }} />
-                <ImageButton
-                    title="Reports"
-                    img={require('../images/icon.png')}
-                    onPress={
-                        () => {
-                            this.props.navigation.navigate("Reports");
-                        }
-                     }
-                />
-
-                <View style={{ height: 10 }} />    
-
-            </View>
+            <AppNavigator />
         );//return
     }//render
 }//MainScreen

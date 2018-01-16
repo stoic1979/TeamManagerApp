@@ -2,5 +2,9 @@
     {
         "merged": "/home/nsk/work/React-Projects/TeamManagerApp/android/app/build/intermediates/res/merged/debug/drawable-hdpi/launch_screen.png",
         "source": "/home/nsk/work/React-Projects/TeamManagerApp/android/app/src/main/res/drawable-hdpi/launch_screen.png"
+    },
+    {
+        "merged": "/home/web/work/TeamManagerApp/android/app/build/intermediates/res/merged/debug/drawable-hdpi/launch_screen.png",
+        "source": "/home/web/work/TeamManagerApp/android/app/src/main/res/drawable-hdpi/launch_screen.png"
     }
 ]
