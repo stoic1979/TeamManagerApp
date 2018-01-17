@@ -12,7 +12,7 @@ import {
     BackHandler
 } from 'react-native';
 
-import {TabNavigator} from 'react-navigation';
+import {TabNavigator, DrawerNavigator, NavigationActions} from 'react-navigation';
 
 import ProjectListScreen from '../screens/ProjectListScreen';
 import TeamScreen from '../screens/TeamScreen';
@@ -27,24 +27,33 @@ import CustomButton from '../components/CustomButton'
 import ImageButton from '../components/ImageButton'
 
 
-
 class MainScreen extends Component {
     static navigationOptions = {
-        title: "Dashboard"
+        title: "Dashboard",
+
+          headerLeft: <Text onPress={() => 
+          this.props.navigation.navigate('DrawerOpen')}>Menu</Text>
     };
 
     //----------------------
     // componentDidMount
     //----------------------
     
-
     render() {
         this.props.getAllProjects(this.props.token);
-        const AppNavigator=TabNavigator({
-      Projects: {screen: ProjectListScreen},
-      Report: {screen: ReportsScreen},
-      Team: {screen: TeamScreen}
-  },{tabBarPosition:'bottom'});
+
+
+        const tabs = {
+              Projects: {screen: ProjectListScreen},
+              Report: {screen: ReportsScreen},
+              Team: {screen: TeamScreen}
+
+        };
+
+        const MyTabNavigator=TabNavigator(tabs, {tabBarPosition:'bottom'});
+
+        const MyDrawerNavigator=DrawerNavigator(tabs);
+
 
         console.log("-- MainScreen render() :: email: " + this.props.email );
         console.log("-- MainScreen render() :: token: " + this.props.token );
@@ -52,9 +61,19 @@ class MainScreen extends Component {
         setToken(this.props.token);
 
         return (
-            <AppNavigator />
+
+            <View>
+                <MyDrawerNavigator/> 
+            </View>
+
+            <View>
+                <MyTabNavigator/>
+            </View>    
+
         );//return
+
     }//render
+
 }//MainScreen
 
 const mapStateToProps = (state, ownProps) => {
