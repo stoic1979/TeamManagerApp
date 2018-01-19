@@ -44,12 +44,11 @@ class ProjectListScreen extends Component {
     //-------------------------
     // constructor
     //-------------------------
-    constructor(props) {
+      constructor(props){
         super(props);
-
-        this.showProjectScreen = this.showProjectScreen.bind(this);
-        this.addproject = this.addproject.bind(this);
-    }
+        this.addproject=this.addproject.bind(this);
+        this.showProjectScreen=this.showProjectScreen.bind(this);
+      }
 
 
     //---------------------------

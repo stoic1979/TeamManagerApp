@@ -4,7 +4,9 @@ import {
     Text,
     Picker,
     TextInput,
+    ImageBackground,
     View,
+    Dimensions,
     Button,
     ActivityIndicator
 } from 'react-native';
@@ -43,7 +45,8 @@ export default class RegisterScreen extends Component {
             first_name:'',
             last_name:'',
             role:'MANAGER',
-            message:''
+            message:'',
+            team:''
         }
 
 
@@ -65,7 +68,8 @@ export default class RegisterScreen extends Component {
             password: this.state.password,
             first_name: this.state.first_name,
             last_name: this.state.last_name,
-            role: this.state.role
+            role: this.state.role,
+            team_name: this.state.team
         };
 
         
@@ -122,6 +126,7 @@ export default class RegisterScreen extends Component {
         //-------------------
         
         return (
+        <ImageBackground  style={{  padding: 10, width: Dimensions.get('window').width, height: Dimensions.get('window').height }} source={require('../images/bg1.png')}>
             <View style={{margin:20}}>
                 <Text style={{fontSize:20}}>Register</Text>
                 <TextInput
@@ -156,6 +161,12 @@ export default class RegisterScreen extends Component {
                 <Picker.Item label="Manager" value="MANAGER" />
                 <Picker.Item label="Worker" value="WORKER" />
                 </Picker>
+                {this.state.role == 'MANAGER'&&
+                <TextInput
+                    ref={component => this._team = component}
+                    placeholder='Team'
+                    onChangeText={(team) => this.setState({team})}
+                />}
                 {!!this.state.message && (
                     <Text
                         style={{fontSize: 14, color: 'red', padding: 5}}>
@@ -169,6 +180,7 @@ export default class RegisterScreen extends Component {
                     onPress={this._userRegister}
                 />
             </View>
+        </ImageBackground>
         )//return
     }//render
 }//RegisterScreen

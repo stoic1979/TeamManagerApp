@@ -61,15 +61,12 @@ class MainScreen extends Component {
         setToken(this.props.token);
 
         return (
-
             <View>
-                <MyDrawerNavigator/> 
+                <MyDrawerNavigator/>
             </View>
-
             <View>
                 <MyTabNavigator/>
-            </View>    
-
+            </View>
         );//return
 
     }//render
