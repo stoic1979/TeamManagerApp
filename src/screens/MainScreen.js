@@ -63,8 +63,6 @@ class MainScreen extends Component {
         return (
             <View>
                 <MyDrawerNavigator/>
-            </View>
-            <View>
                 <MyTabNavigator/>
             </View>
         );//return
